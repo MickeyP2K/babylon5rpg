@@ -1,4 +1,4 @@
-[![foundry-shield-066]][foundry-url] [![foundry-shield-078]][foundry-url] [![All Release Downloads](https://img.shields.io/github/downloads/pwatson100/alienrpg/total.svg)]()
+[![foundry-shield-066]][foundry-url] [![foundry-shield-078]][foundry-url] [![All Release Downloads](https://img.shields.io/github/downloads/mickeyp2k/babylon5rpg/total.svg)]()
 
 # Babylon 5 RPG 
 
