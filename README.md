@@ -1,34 +1,26 @@
 [![foundry-shield-066]][foundry-url] [![foundry-shield-078]][foundry-url] [![All Release Downloads](https://img.shields.io/github/downloads/pwatson100/alienrpg/total.svg)]()
 
-# Alien RPG System
+# Babylon 5 RPG 
 
-An UNOFFICIAL system for playing Alien RPG on Foundry VTT.
+An UNOFFICIAL system for playing Babylon 5 on Foundry VTT.
 
-This system only provides support for character, creature, items, system, talent and character sheets.
+My intention is to enable people to play Babylon 5 RPG using what I beleive to be a far superior game system for this setting. 
 
-There is no game content or images in this system.
-
-Should you wish to populate the system with game content for your own use please purchase the rules from Free League Publishing: https://frialigan.se/en/games/alien/
-
-My intention is to enable people to play Alien RPG remotely and not to create a fully enabled/automated system. Mother will still need to do some work.  
-Please do not ask me to provide content. Buy the system from Free League !
-
-See the Journal Entry "Mother Instructions" for an overview on how the sheets work.
+To fully use this game system you will need to purchase a copy of the Aliens RPG rules from Free League Publishing: https://frialigan.se/en/games/alien/
 
 ### System Version
 
-This is community created game system to run Alien RPG games on virtual table top platforms.
+This is community created game system to run Babylon 5 games on virtual table top platforms.
 
 Please Note:
 
 - If you find any issues or have any feedback please let me know.
-- I have added limited language support for Swedish and German.
 
 ### VTT Support:
 
 Tested with the following virtual table top platforms:
 
-- Foundry VTT v0.6.6 & v0.7.5.
+- v0.7.9
 
 ### Note: Dice so Nice is no longer required for this system but it fully supports DsN and is recommended:
 
@@ -36,15 +28,10 @@ Tested with the following virtual table top platforms:
 
 ### Shoutouts
 
-A huge thanks to:
+Thanks to:
 
-- @Mikasaz#3063 for his help and support in developing and testing the system.
-- @shteff#8724 for the improved dice chat and macros.
-- @asacolips#1867 for creating a great base system to kickstart new developments.
-- @NickEast#1131 for his development guides and base system.
-- @hooking [UTC+12]#0492 for his excellent PF2e which has provided many insights into how to build systems.
-- Carter#2703 and Isma#1088 for thir help with French language support.
-- And all the devs on Discord who know more than me for their various contributions.
+- @pwatson100 for making the Alien RPG system upon which this is based https://github.com/pwatson100/alienrpg
+
 
 ### Feedback
 
