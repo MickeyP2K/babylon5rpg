@@ -46,7 +46,9 @@
 }
 
 :root {
-  --aliengreen: #fffd00;
+  --aliengreen: #adff2f;
+  --babylon5yellow: #fffd00;
+  --babylon5blue: #07215D;
   --blue: #577ee7;
   --black: #000;
   --white: #ffffff;
@@ -77,10 +79,10 @@
 }
 
 .alienrpg .window-content {
-  font-family: var(--alienfont);
-  color: var(--aliengreen);
+  font-family: var(--babylon5font);
+  color: var(--babylon5yellow);
   font-size: var(--fontsize);
-  background: #000;
+  background: var(--babylon5blue);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -94,9 +96,9 @@
 }
 
 .journal-sheet form {
-  color: var(--aliengreen);
-  background: #000;
-  border: 1px solid var(--aliengreen);
+  color: var(--babylon5yellow);
+  background: var(--babylon5blue);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 1px;
 }
 
