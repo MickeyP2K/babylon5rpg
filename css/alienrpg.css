@@ -34,13 +34,19 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'Babylon 5';
+  src: url(/systems/babylon5rpg/fonts/B5______.TTF) format("truetype");
+}
+
 :root {
   --alienfont: 'Wallpoet';
+  --babylon5font: 'Babylon 5';
   --fontsize: 15px;
 }
 
 :root {
-  --aliengreen: #adff2f;
+  --aliengreen: #fffd00;
   --blue: #577ee7;
   --black: #000;
   --white: #ffffff;
@@ -141,7 +147,7 @@
 }
 
 .chat-message {
-  background-image: url("/systems/alienrpg/images/IndBackground3.png");
+  background-image: url("/systems/babylon5rpg/images/IndBackground3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -165,7 +171,7 @@
 }
 
 .chat-message .table-draw .table-results .table-result .chatBG {
-  background-image: url("/systems/alienrpg/images/IndBackground3.png");
+  background-image: url("/systems/babylon5rpg/images/IndBackground3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -469,7 +475,14 @@ button:focus {
 
 .grid-genPage {
   display: grid;
-  grid-template-areas: 'Item1 Item2 Item2' 'Item1 Item4 Item4' 'Item8 Item5 Item5' 'Item8 Item3 Item3' 'Item9 Item6 Item6' 'Item9 Item7 Item7' 'Item11 Item10 Item10' 'Item11 Item10 Item10';
+  grid-template-areas: 'Item1 Item2 Item2'
+ 'Item1 Item4 Item4'
+ 'Item8 Item5 Item5'
+ 'Item8 Item3 Item3'
+ 'Item9 Item6 Item6'
+ 'Item9 Item7 Item7'
+ 'Item11 Item10 Item10'
+ 'Item11 Item10 Item10';
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -554,7 +567,11 @@ button:focus {
   display: grid;
   margin: 0;
   padding: 0;
-  grid-template-areas: 'Col1 Col2 '  'Col1 Col2 '  'Col1 Col2 '  'Col1 Col4 '  'Col3 Col3';
+  grid-template-areas: 'Col1 Col2 ' 
+ 'Col1 Col2 ' 
+ 'Col1 Col2 ' 
+ 'Col1 Col4 ' 
+ 'Col3 Col3';
   grid-template-columns: 370px 1fr;
 }
 
@@ -608,7 +625,11 @@ button:focus {
 
 .grid-Consumables {
   display: grid;
-  grid-template-areas: 'Heading Heading ' 'Air1 Air2' 'Food1 Food2' 'Power1 Power2' 'Water1 Water2';
+  grid-template-areas: 'Heading Heading '
+ 'Air1 Air2'
+ 'Food1 Food2'
+ 'Power1 Power2'
+ 'Water1 Water2';
   grid-template-columns: 1fr 1fr;
 }
 
@@ -665,7 +686,8 @@ button:focus {
 .grid-vehicle {
   display: grid;
   border: 2px solid var(--aliengreen);
-  grid-template-areas: 'vItem1 vItem2 vItem3 vItem4' 'vItem5 vItem6 vItem7 vItem8';
+  grid-template-areas: 'vItem1 vItem2 vItem3 vItem4'
+ 'vItem5 vItem6 vItem7 vItem8';
   grid-template-columns: auto;
 }
 
@@ -708,7 +730,8 @@ button:focus {
 .grid-weapon {
   display: grid;
   border: 2px solid var(--aliengreen);
-  grid-template-areas: 'wItem1 wItem2 wItem3 wItem4' 'wItem5 wItem6 wItem7 wItem7';
+  grid-template-areas: 'wItem1 wItem2 wItem3 wItem4'
+ 'wItem5 wItem6 wItem7 wItem7';
   grid-template-columns: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -746,7 +769,8 @@ button:focus {
 
 .grid-weapon-body {
   display: grid;
-  grid-template-areas: 'wCol1 wCol2 wCol3 wCol4 wCol5 wCol6' 'wCol7 wCol8 wCol9 wCol10 wCol11 wCol12';
+  grid-template-areas: 'wCol1 wCol2 wCol3 wCol4 wCol5 wCol6'
+ 'wCol7 wCol8 wCol9 wCol10 wCol11 wCol12';
   padding-bottom: 2px;
   grid-template-columns: 1fr 1.2fr 0.81fr 0.5fr 0.5fr 1fr;
   -webkit-box-align: center;
@@ -816,7 +840,8 @@ button:focus {
 
 .grid-items {
   display: grid;
-  grid-template-areas: 'lCol1 lCol2 lCol11 lCol10 lCol3 lCol4' 'lCol5 lCol6 lCol12 lCol9 lCol7 lCol8';
+  grid-template-areas: 'lCol1 lCol2 lCol11 lCol10 lCol3 lCol4'
+ 'lCol5 lCol6 lCol12 lCol9 lCol7 lCol8';
   padding-bottom: 2px;
   grid-template-columns: 2em 30em 5em 5em 4em 2em;
   -webkit-box-align: center;
@@ -886,7 +911,9 @@ button:focus {
 
 .grid-talents {
   display: grid;
-  grid-template-areas: 'talTitle talTitle' 'tal1 tal2' 'tal3 tal4';
+  grid-template-areas: 'talTitle talTitle'
+ 'tal1 tal2'
+ 'tal3 tal4';
   padding: 3px;
   grid-template-columns: 75% 25%;
   -webkit-box-align: center;
@@ -1003,7 +1030,10 @@ button:focus {
 .grid-creature {
   display: grid;
   border: 2px solid var(--aliengreen);
-  grid-template-areas: 'vCre1 vCre2 ' 'vCre3 vCre4 ' 'vCre5 vCre6 ' 'vCre7 vCre8';
+  grid-template-areas: 'vCre1 vCre2 '
+ 'vCre3 vCre4 '
+ 'vCre5 vCre6 '
+ 'vCre7 vCre8';
 }
 
 .vCre1 {
@@ -1041,7 +1071,10 @@ button:focus {
 .grid-planet-header {
   display: grid;
   border: 2px solid var(--aliengreen);
-  grid-template-areas: 'hplan1 hplan2 ' 'hplan3 hplan4' 'hplan5 hplan6 ' 'hplan7 hplan8';
+  grid-template-areas: 'hplan1 hplan2 '
+ 'hplan3 hplan4'
+ 'hplan5 hplan6 '
+ 'hplan7 hplan8';
   grid-template-columns: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1113,7 +1146,8 @@ button:focus {
 .grid-systems {
   display: grid;
   padding: 3px;
-  grid-template-areas: 'sys1 sys2 sys3 sys4' 'sys5 sys6 sys7 sys8';
+  grid-template-areas: 'sys1 sys2 sys3 sys4'
+ 'sys5 sys6 sys7 sys8';
   grid-template-columns: 14em 15em 10em 2em;
   border-color: var(--aliengreen);
   border-bottom: double;
@@ -1170,7 +1204,8 @@ button:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  grid-template-areas: 'gCol1 gCol2 gCol3 gCol4 gCol5' 'gCol6 gCol7 gCol8 gCol9 gCol10';
+  grid-template-areas: 'gCol1 gCol2 gCol3 gCol4 gCol5'
+ 'gCol6 gCol7 gCol8 gCol9 gCol10';
   grid-template-columns: 110px 50px 110px 50px 65px;
 }
 
