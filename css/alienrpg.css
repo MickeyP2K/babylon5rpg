@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'Babylon 5';
-  src: url(/systems/babylon5rpg/fonts/B5______.TTF) format("truetype");
+  src: url(/systems/babylon5rpg/fonts/b5.ttf) format("truetype");
 }
 
 :root {
@@ -70,9 +70,9 @@
   left: -500%;
   top: 50%;
   background: #000000;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 5px;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
   text-align: left;
   font-size: smaller;
   z-index: 1;
@@ -92,7 +92,7 @@
   padding: 2px;
   overflow-y: scroll;
   overflow-x: auto;
-  border: var(--aliengreen) 3px;
+  border: var(--babylon5yellow) 3px;
 }
 
 .journal-sheet form {
