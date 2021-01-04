@@ -36,12 +36,12 @@
 
 @font-face {
   font-family: 'Babylon 5';
-  src: url(/systems/babylon5rpg/fonts/b5.ttf) format("truetype");
+  src: local("Babylon5"), url(/systems/babylon5rpg/fonts/b5.ttf) format("truetype");
 }
 
 :root {
   --alienfont: 'Wallpoet';
-  --babylon5font: 'Babylon 5';
+  --babylon5font: 'Babylon5';
   --fontsize: 15px;
 }
 
