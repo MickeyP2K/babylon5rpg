@@ -120,6 +120,10 @@
         }
       },
       "general": {
+        "race": {
+          "value": "",
+          "label": "race"
+        },
         "career": {
           "value": "",
           "label": "career"
