@@ -94,28 +94,28 @@
             </div>
           </li>
           {{/each}}
-        </div>
-        <div class="Col4">
-          <li class="grid-talents item-header">
-            <h2 class="item talTitle">{{localize "ALIENRPG.Agenda"}}</h2>
-            <h3 class="item-name tal1"  >{{localize "ALIENRPG.Name"}}</h3>
-            <div class="item-controls tal2">
             </div>
-          </li>
-          
-          {{#each agendas as |item iid|}}
-          <li class="item grid-talents" data-item-id="{{item._id}}">
-            <h4 class="item-name tal3 talent-btn" data-pmbut="{{item._id}}">{{item.name}} </h4>
-            <div class="tal4 item-controls">
-            <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'ALIENRPG.EditItem'}}"><i class="fas fa-edit"></i></a>
+            <div class="Col4">
+              <li class="grid-talents item-header">
+                <h2 class="item talTitle">{{localize "ALIENRPG.Agenda"}}</h2>
+                <h3 class="item-name tal1"  >{{localize "ALIENRPG.Name"}}</h3>
+                <div class="item-controls tal2">
+                </div>
+              </li>
+              
+              {{#each agendas as |item iid|}}
+              <li class="item grid-talents" data-item-id="{{item._id}}">
+                <h4 class="item-name tal3 talent-btn" data-pmbut="{{item._id}}">{{item.name}} </h4>
+                <div class="tal4 item-controls">
+                <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'ALIENRPG.EditItem'}}"><i class="fas fa-edit"></i></a>
 
+                </div>
+              </li>
+              {{/each}}
             </div>
-          </li>
-          {{/each}}
-        </div>
-        {{!-- Stunts/Talents pop up    DO NOT TOUCH THE DIV BELOW --}}
-        <div class="Col3" style="font-family: initial;font-size: larger"  id="panel" >
-        </div>
+          {{!-- Stunts/Talents pop up    DO NOT TOUCH THE DIV BELOW --}}
+          <div class="Col3" style="font-family: initial;font-size: larger"  id="panel" >
+     </div>
       </div>
     </div>
 
@@ -220,21 +220,38 @@
                 <!-- Col 2 -->
                 <div class="Item2">
                   <div class="grid-two">
+                    <label class="resource-label" >{{localize "ALIENRPG.Race"}}</label>
+                    <select class="select-css" name="data.general.race.value" data-dtype="{{data.general.race.value}}">
+                      {{#select data.general.race.value}}
+                      <!-- <option value=""></option> -->
+                      <option value="1">Abbai</option>
+                      <option value="2">Brakiri</option>
+                      <option value="3">Centauri</option>
+                      <option value="4">Drazi</option>
+                      <option value="5">Human</option>
+                      <option value="6">Minbari</option>           
+                      <option value="7">Narn</option>
+                      <option value="8">Pak'ma'ra</option>          
+                      {{/select}}
+                      </select>
+                  </div>
+                  <div class="grid-two">
                     <label class="resource-label" >{{localize "ALIENRPG.Career"}}</label>
                     <select class="select-css" name="data.general.career.value" data-dtype="{{data.general.career.value}}">
                       {{#select data.general.career.value}}
                       <!-- <option value=""></option> -->
-                      <option value="1">{{localize "ALIENRPG.ColonialMarine"}}</option>
-                      <option value="2">{{localize "ALIENRPG.ColonialMarshal"}}</option>
-                      <option value="3">{{localize "ALIENRPG.CompanyAgent"}}</option>
-                      <option value="4">{{localize "ALIENRPG.Kid"}}</option>
-                      <option value="5">{{localize "ALIENRPG.Medic"}}</option>
-                      <option value="6">{{localize "ALIENRPG.Mercenary"}}</option>           
-                      <option value="7">{{localize "ALIENRPG.Officer"}}</option>
-                      <option value="8">{{localize "ALIENRPG.Pilot"}}</option>
-                      <option value="9">{{localize "ALIENRPG.Roughneck"}}</option>
-                      <option value="10">{{localize "ALIENRPG.Scientist"}}</option>           
-                      <option value="11">{{localize "ALIENRPG.Synthetic"}}</option>           
+                      <option value="1">Agent</option>
+                      <option value="2">Diplomat</option>
+                      <option value="3">Lurker</option>
+                      <option value="4">Officer - Fleet</option>
+                      <option value="5">Officer - GROPO</option>
+                      <option value="6">Officer - Pilot</option>           
+                      <option value="7">Ranger</option>
+                      <option value="8">Scientist</option>
+                      <option value="9">Soldier</option>
+                      <option value="10">Telepath</option>           
+                      <option value="11">Trader</option>           
+                      <option value="12">Worker</option>           
                       {{/select}}
                       </select>
                   </div>
