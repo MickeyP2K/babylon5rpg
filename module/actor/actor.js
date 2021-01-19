@@ -409,7 +409,7 @@ export class alienrpgActor extends Actor {
     let label = dataset.label;
     let r2Data = 0;
     let reRoll = false;
-    let template = 'systems/alienrpg/templates/dialog/roll-all-dialog.html';
+    let template = 'systems/babylon5rpg/templates/dialog/roll-all-dialog.html';
     game.alienrpg.rollArr.sCount = 0;
     if (dataset.roll) {
       let r1Data = parseInt(dataset.roll || 0) + parseInt(dataset.mod || 0);
@@ -472,7 +472,7 @@ export class alienrpgActor extends Actor {
           }).render(true);
         });
       } else if (actor.data.type === 'synthetic') {
-        template = 'systems/alienrpg/templates/dialog/roll-base-dialog.html';
+        template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
             title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
@@ -502,7 +502,7 @@ export class alienrpgActor extends Actor {
           }).render(true);
         });
       } else {
-        template = 'systems/alienrpg/templates/dialog/roll-base-dialog.html';
+        template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
             title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
@@ -535,7 +535,7 @@ export class alienrpgActor extends Actor {
       }
     } else if (dataset.panicroll) {
       // Roll against the panic table and push the roll to the chat log.
-      template = 'systems/alienrpg/templates/dialog/roll-stress-dialog.html';
+      template = 'systems/babylon5rpg/templates/dialog/roll-stress-dialog.html';
 
       let confirmed = false;
       renderTemplate(template).then((dlg) => {
@@ -730,7 +730,7 @@ export class alienrpgActor extends Actor {
   }
 
   async creatureAcidRoll(actor, dataset) {
-    let template = 'systems/alienrpg/templates/dialog/roll-base-xeno-dialog.html';
+    let template = 'systems/babylon5rpg/templates/dialog/roll-base-xeno-dialog.html';
     let label = dataset.label;
     let r1Data = parseInt(dataset.roll || 0);
     let r2Data = 0;

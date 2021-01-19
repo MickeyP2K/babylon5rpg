@@ -22,7 +22,7 @@ export class alienrpgActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['alienrpg', 'sheet', 'actor', 'actor-sheet'],
-      // template: 'systems/alienrpg/templates/actor/actor-sheet.html',
+      // template: 'systems/babylon5rpg/templates/actor/actor-sheet.html',
       width: 740,
       height: 741,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -30,7 +30,7 @@ export class alienrpgActorSheet extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/babylon5rpg/templates/actor/';
     return `${path}actor-sheet.html`;
   }
 

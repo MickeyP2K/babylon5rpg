@@ -27,7 +27,7 @@ export class alienrpgItem extends Item {
     const actorData = this.actor ? this.actor.data.data : {};
     const itemData = item.data;
     game.alienrpg.rollArr.sCount = 0;
-    let template = 'systems/alienrpg/templates/dialog/roll-all-dialog.html';
+    let template = 'systems/babylon5rpg/templates/dialog/roll-all-dialog.html';
     // let roll;
     let r2Data = 0;
     let reRoll = false;
@@ -96,7 +96,7 @@ export class alienrpgItem extends Item {
         });
       } else {
         // Its not got stress so don't display the stress mod box
-        template = 'systems/alienrpg/templates/dialog/roll-base-dialog.html';
+        template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
             title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),

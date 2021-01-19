@@ -9,7 +9,7 @@ export class AlienConfig extends FormApplication {
       title: game.i18n.localize('ALIENRPG.MenuLabel'),
       id: 'alienprgSettings',
       icon: 'fas fa-cogs',
-      template: 'systems/alienrpg/module/alienprgSettings.html',
+      template: 'systems/babylon5rpg/module/alienprgSettings.html',
       width: 400,
       closeOnSubmit: true,
     });

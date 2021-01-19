@@ -15,7 +15,7 @@ export class alienrpgItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = 'systems/alienrpg/templates/item';
+    const path = 'systems/babylon5rpg/templates/item';
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
     // Alternatively, you could use the following return statement to do a

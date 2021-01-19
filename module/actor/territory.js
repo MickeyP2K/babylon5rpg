@@ -23,7 +23,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['alienrpg', 'sheet', 'actor', 'territory'],
-      // template: 'systems/alienrpg/templates/actor/vehicles-sheet.html',
+      // template: 'systems/babylon5rpg/templates/actor/vehicles-sheet.html',
       width: 650,
       height: 650,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],
@@ -31,7 +31,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
   }
 
   get template() {
-    const path = 'systems/alienrpg/templates/actor/';
+    const path = 'systems/babylon5rpg/templates/actor/';
     return `${path}territory-sheet.html`;
   }
 
