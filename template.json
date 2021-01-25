@@ -304,6 +304,12 @@
           "ability": "wit",
           "description": "Observation"
         },
+        "science": {
+          "value": 0,
+          "label": "Science",
+          "ability": "wit",
+          "description": "Science"
+        },
         "survival": {
           "value": 0,
           "label": "Survival",
