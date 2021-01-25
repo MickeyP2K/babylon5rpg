@@ -37,7 +37,7 @@ export class AlienConfig extends FormApplication {
 
   // onApply(formData) {
   //   var r = document.querySelector(':root');
-  //   r.style.setProperty('--aliengreen', formData.fontColour);
+  //   r.style.setProperty('--babylon5yellow', formData.fontColour);
   //   r.style.setProperty('--alienfont', formData.fontStyle);
 
   //   this.render();

@@ -204,7 +204,7 @@ Hooks.once('renderSettings', () => {
 Hooks.once('ready', () => {
   // game.settings.get('alienrpg', 'fontColour');
   var r = document.querySelector(':root');
-  r.style.setProperty('--aliengreen', game.settings.get('alienrpg', 'fontColour'));
+  r.style.setProperty('--babylon5yellow', game.settings.get('alienrpg', 'fontColour'));
   r.style.setProperty('--alienfont', game.settings.get('alienrpg', 'fontStyle'));
 });
 

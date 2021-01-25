@@ -46,7 +46,7 @@
 }
 
 :root {
-  --aliengreen: #adff2f;
+  --babylon5yellow: #a5a52f;
   --babylon5yellow: #a5a52f;
   --babylon5blue: #07215D;
   --blue: #577ee7;
@@ -82,7 +82,7 @@
   font-family: var(--babylon5font);
   color: var(--babylon5yellow);
   font-size: var(--fontsize);
-  background: var(--babylon5blue);
+  background: var(--black);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -106,7 +106,7 @@
   font-family: var(--alienfont);
   color: inherit;
   background: #000;
-  border: var(--aliengreen) 3px;
+  border: var(--babylon5yellow) 3px;
   border: 1px solid #7a7971;
   border-radius: 3px;
   padding: 0 3px;
@@ -119,14 +119,14 @@
   font-family: var(--alienfont);
   color: inherit;
   background: #000;
-  border: var(--aliengreen) 3px;
+  border: var(--babylon5yellow) 3px;
 }
 
 .journal-sheet button {
   font-family: var(--alienfont);
   color: inherit;
   background: #000;
-  border: var(--aliengreen) solid 1px;
+  border: var(--babylon5yellow) solid 1px;
   width: 100%;
   margin: 0 1px;
   border-radius: 3px;
@@ -157,19 +157,19 @@
 }
 
 .chat-message .message-header .message-sender {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message .message-metadata {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message .flavor-text {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message .table-draw .table-results .table-result {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message .table-draw .table-results .table-result .chatBG {
@@ -177,13 +177,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
   padding-left: 6px;
 }
 
 .chat-message.whisper {
   background: #161616;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message.blind {
@@ -191,7 +191,7 @@
 }
 
 .dice-tooltip {
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 1px;
   background: #000;
 }
@@ -209,14 +209,14 @@
 .inline-roll .dice-tooltip {
   color: inherit;
   background: #000;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   border-radius: 2px;
 }
 
 a.inline-roll {
   background: black;
   padding: 1px 4px;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 2px;
   white-space: nowrap;
   word-break: break-all;
@@ -224,7 +224,7 @@ a.inline-roll {
 
 .dice-roll .dice-formula,
 .dice-roll .dice-total {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .dice-tooltip .part-header .part-formula {
@@ -421,7 +421,7 @@ button:focus {
   right: 105%;
   margin-left: -60px;
   border-style: solid;
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
 }
 
 .tooltip .tooltiptext::after {
@@ -462,7 +462,7 @@ button:focus {
 .grid-3col {
   grid-column: span 3 / span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
   justify-items: center;
   margin: 0;
 }
@@ -470,7 +470,7 @@ button:focus {
 .grid-4col {
   grid-column: span 4 / span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
   border-style: double;
   padding: 4px;
 }
@@ -490,72 +490,72 @@ button:focus {
 
 .Item1 {
   grid-area: Item1;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding: 5px;
   text-align: center;
 }
 
 .Item2 {
   grid-area: Item2;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
 }
 
 .Item3 {
   grid-area: Item3;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item4 {
   grid-area: Item4;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item5 {
   grid-area: Item5;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item6 {
   grid-area: Item6;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item7 {
   grid-area: Item7;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item8 {
   grid-area: Item8;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding: 5px;
 }
 
 .Item9 {
   grid-area: Item9;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
 }
 
 .Item10 {
   grid-area: Item10;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .Item11 {
   grid-area: Item11;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   padding: 4px;
   padding-left: 24px;
   -ms-flex-line-pack: center;
@@ -602,7 +602,7 @@ button:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   grid-template-areas: 'Attr1 Attr2 Attr3';
   grid-template-columns: 300px 35px 30px;
 }
@@ -680,14 +680,14 @@ button:focus {
 
 .grid-vehicle-header {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   grid-template-areas: 'vChar vChar';
   grid-template-columns: auto;
 }
 
 .grid-vehicle {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   grid-template-areas: 'vItem1 vItem2 vItem3 vItem4'
  'vItem5 vItem6 vItem7 vItem8';
   grid-template-columns: auto;
@@ -731,7 +731,7 @@ button:focus {
 
 .grid-weapon {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   grid-template-areas: 'wItem1 wItem2 wItem3 wItem4'
  'wItem5 wItem6 wItem7 wItem7';
   grid-template-columns: auto;
@@ -1031,7 +1031,7 @@ button:focus {
 
 .grid-creature {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   grid-template-areas: 'vCre1 vCre2 '
  'vCre3 vCre4 '
  'vCre5 vCre6 '
@@ -1072,7 +1072,7 @@ button:focus {
 
 .grid-planet-header {
   display: grid;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   grid-template-areas: 'hplan1 hplan2 '
  'hplan3 hplan4'
  'hplan5 hplan6 '
@@ -1151,7 +1151,7 @@ button:focus {
   grid-template-areas: 'sys1 sys2 sys3 sys4'
  'sys5 sys6 sys7 sys8';
   grid-template-columns: 14em 15em 10em 2em;
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
   border-bottom: double;
 }
 
@@ -1202,7 +1202,7 @@ button:focus {
   padding-left: 30px;
   grid-row-gap: 3px;
   grid-column-gap: 10px;
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1411,7 +1411,7 @@ button:focus {
   position: absolute;
   top: 1px;
   left: 1px;
-  background: var(--aliengreen);
+  background: var(--babylon5yellow);
   height: 8px;
   border: 1px solid #6f5439;
   border-radius: 3px;
@@ -1519,7 +1519,7 @@ button:focus {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   -webkit-box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
   border-radius: 0.5em;
@@ -1554,9 +1554,9 @@ button:focus {
 .select-css:focus {
   color: inherit;
   /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-  -webkit-box-shadow: 0 0 1px 1px var(--aliengreen);
-  box-shadow: 0 0 1px 1px var(--aliengreen);
-  box-shadow: 0 0 0 1px -moz-mac-focusring var(--aliengreen);
+  -webkit-box-shadow: 0 0 1px 1px var(--babylon5yellow);
+  box-shadow: 0 0 1px 1px var(--babylon5yellow);
+  box-shadow: 0 0 0 1px -moz-mac-focusring var(--babylon5yellow);
   color: inherit;
   outline: none;
   background-color: black;
@@ -1578,7 +1578,7 @@ button:focus {
 /* Disabled styles */
 .select-css:disabled,
 .select-css[aria-disabled='true'] {
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(black), to(black));
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -o-linear-gradient(top, black 0%, black 100%);
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, black 0%, black 100%);
@@ -1732,7 +1732,7 @@ button:focus {
   resize: none;
   padding: 2;
   color: inherit;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
 }
 
 .alienrpg form .sheet-content .click-stat-level {

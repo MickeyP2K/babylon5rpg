@@ -10,9 +10,9 @@
   left: -500%;
   top: 50%;
   background: #000000;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 5px;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
   text-align: left;
   font-size: smaller;
   z-index: 1;
@@ -20,7 +20,7 @@
 
 .alienrpg .window-content {
   font-family: var(--alienfont);
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
   font-size: var(--fontsize);
   background: $c-black;
   flex-direction: column;
@@ -28,14 +28,14 @@
   padding: 2px;
   overflow-y: scroll;
   overflow-x: auto;
-  border: var(--aliengreen) 3px;
+  border: var(--babylon5yellow) 3px;
 }
 .journal-sheet {
   form {
     // font-family: var(--alienfont);
-    color: var(--aliengreen);
+    color: var(--babylon5yellow);
     background: $c-black;
-    border: 1px solid var(--aliengreen);
+    border: 1px solid var(--babylon5yellow);
     border-radius: 1px;
   }
   select {
@@ -43,7 +43,7 @@
     //  color: $c-green;
     color: inherit;
     background: $c-black;
-    border: var(--aliengreen) 3px;
+    border: var(--babylon5yellow) 3px;
     border: 1px solid #7a7971;
     border-radius: 3px;
     padding: 0 3px;
@@ -56,7 +56,7 @@
     color: inherit;
 
     background: $c-black;
-    border: var(--aliengreen) 3px;
+    border: var(--babylon5yellow) 3px;
   }
   button {
     font-family: var(--alienfont);
@@ -64,7 +64,7 @@
     color: inherit;
 
     background: $c-black;
-    border: var(--aliengreen) solid 1px;
+    border: var(--babylon5yellow) solid 1px;
     width: 100%;
     margin: 0 1px;
     border-radius: 3px;
@@ -93,19 +93,19 @@
   //  color: $c-green;
 
   .message-header .message-sender {
-    color: var(--aliengreen);
+    color: var(--babylon5yellow);
     // color: inherit;
   }
   .message-metadata {
-    color: var(--aliengreen);
+    color: var(--babylon5yellow);
     // color: inherit;
   }
   .flavor-text {
-    color: var(--aliengreen);
+    color: var(--babylon5yellow);
     // color: inherit;
   }
   .table-draw .table-results .table-result {
-    color: var(--aliengreen);
+    color: var(--babylon5yellow);
     // color: inherit;
   }
 }
@@ -114,14 +114,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 
   padding-left: 6px;
 }
 .chat-message.whisper {
   background: rgb(22, 22, 22);
   //  color: $c-green;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 
 .chat-message.blind {
@@ -129,7 +129,7 @@
 }
 
 .dice-tooltip {
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 1px;
   background: $c-black;
 
@@ -149,14 +149,14 @@
   color: inherit;
   //  color: $c-green;
   background: $c-black;
-  border: 2px solid var(--aliengreen);
+  border: 2px solid var(--babylon5yellow);
   border-radius: 2px;
 }
 // a.entity-link,
 a.inline-roll {
   background: black;
   padding: 1px 4px;
-  border: 1px solid var(--aliengreen);
+  border: 1px solid var(--babylon5yellow);
   border-radius: 2px;
   white-space: nowrap;
   word-break: break-all;
@@ -165,7 +165,7 @@ a.inline-roll {
 .dice-roll .dice-formula,
 .dice-roll .dice-total {
   // color: inherit;
-  color: var(--aliengreen);
+  color: var(--babylon5yellow);
 }
 .dice-tooltip .part-header .part-formula {
   //  color: $c-green;
@@ -368,7 +368,7 @@ button:focus {
   right: 105%;
   margin-left: -60px;
   border-style: solid;
-  border-color: var(--aliengreen);
+  border-color: var(--babylon5yellow);
 }
 .tooltip .tooltiptext::after {
   content: ' ';
