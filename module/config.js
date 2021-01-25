@@ -22,6 +22,7 @@ ALIENRPG.skills = {
   manipulation: 'ALIENRPG.SkillManipulation',
   medicalAid: 'ALIENRPG.SkillMedicalAid',
   observation: 'ALIENRPG.SkillObservation',
+  science: 'ALIENRPG.SkillScience',
   survival: 'ALIENRPG.SkillSurvival',
   comtech: 'ALIENRPG.SkillComtech',
 };
