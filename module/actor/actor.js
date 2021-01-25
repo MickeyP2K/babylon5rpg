@@ -92,6 +92,7 @@ export class alienrpgActor extends Actor {
       manipulation: 0,
       medicalAid: 0,
       observation: 0,
+      science: 0,
       survival: 0,
       comtech: 0,
     };
@@ -160,6 +161,9 @@ export class alienrpgActor extends Actor {
               case 'observation':
                 sklMod.observation = sklMod.observation += parseInt(sAttrib.value);
                 break;
+              case 'science':
+                sklMod.observation = sklMod.observation += parseInt(sAttrib.value);
+                break;                
               case 'survival':
                 sklMod.survival = sklMod.survival += parseInt(sAttrib.value);
                 break;
