@@ -37,7 +37,7 @@ export class AlienConfig extends FormApplication {
 
   // onApply(formData) {
   //   var r = document.querySelector(':root');
-  //   r.style.setProperty('--babylon5yellow', formData.fontColour);
+  //   r.style.setProperty('--babylon5borders', formData.fontColour);
   //   r.style.setProperty('--alienfont', formData.fontStyle);
 
   //   this.render();
@@ -46,7 +46,7 @@ export class AlienConfig extends FormApplication {
   onReset() {
     // this.reset = true;
     game.settings.set('alienrpg', 'fontStyle', 'Wallpoet');
-    game.settings.set('alienrpg', 'fontColour', '#adff2f');
+    game.settings.set('alienrpg', 'fontColour', '#6e6e6e');
     this.render();
   }
 

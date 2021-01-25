@@ -22,7 +22,7 @@
 .grid-3col {
   grid-column: span 3 / span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-color: var(--babylon5yellow);
+  border-color: var(--babylon5borders);
   // border-style: solid;
   justify-items: center;
   margin: 0;
@@ -31,7 +31,7 @@
 .grid-4col {
   grid-column: span 4 / span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-color: var(--babylon5yellow);
+  border-color: var(--babylon5borders);
   border-style: double;
   padding: 4px;
 }
@@ -54,63 +54,63 @@
 
 .Item1 {
   grid-area: Item1;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding: 5px;
   text-align: center;
 }
 .Item2 {
   grid-area: Item2;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
 }
 .Item3 {
   grid-area: Item3;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item4 {
   grid-area: Item4;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item5 {
   grid-area: Item5;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item6 {
   grid-area: Item6;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   // justify-items: center;
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item7 {
   grid-area: Item7;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item8 {
   grid-area: Item8;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding: 5px;
 }
 .Item9 {
   grid-area: Item9;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
 }
 .Item10 {
   grid-area: Item10;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding-left: 5px;
   padding-right: 5px;
 }
 .Item11 {
   grid-area: Item11;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   padding: 4px;
   padding-left: 24px;
   align-content: center;
@@ -124,7 +124,7 @@
   padding: 0;
   // align-items: center;
   // justify-items: first baseline;
-  // border: 2px solid var(--babylon5yellow);
+  // border: 2px solid var(--babylon5borders);
   grid-template-areas: 
   'Col1 Col2 ' 
   'Col1 Col2 ' 
@@ -164,7 +164,7 @@
   padding: 0;
   padding-left: 5px;
   align-items: center;
-  border: 1px solid var(--babylon5yellow);
+  border: 1px solid var(--babylon5borders);
   grid-template-areas: 'Attr1 Attr2 Attr3';
   grid-template-columns: 300px 35px 30px;
 }
@@ -249,14 +249,14 @@
 
 .grid-vehicle-header {
   display: grid;
-  border: 2px solid var(--babylon5yellow);
+  border: 2px solid var(--babylon5borders);
   grid-template-areas: 'vChar vChar';
   grid-template-columns: auto;
 }
 
 .grid-vehicle {
   display: grid;
-  border: 2px solid var(--babylon5yellow);
+  border: 2px solid var(--babylon5borders);
   grid-template-areas:
     'vItem1 vItem2 vItem3 vItem4'
     'vItem5 vItem6 vItem7 vItem8';
@@ -294,7 +294,7 @@
 
 .grid-weapon {
   display: grid;
-  border: 2px solid var(--babylon5yellow);
+  border: 2px solid var(--babylon5borders);
   grid-template-areas:
     'wItem1 wItem2 wItem3 wItem4'
     'wItem5 wItem6 wItem7 wItem7';
@@ -328,7 +328,7 @@
 
 .grid-weapon-body {
   display: grid;
-  // border: 2px solid var(--babylon5yellow);
+  // border: 2px solid var(--babylon5borders);
   grid-template-areas:
     'wCol1 wCol2 wCol3 wCol4 wCol5 wCol6'
     'wCol7 wCol8 wCol9 wCol10 wCol11 wCol12';
@@ -390,7 +390,7 @@
 
 .grid-items {
   display: grid;
-  // border: 2px solid var(--babylon5yellow);
+  // border: 2px solid var(--babylon5borders);
   grid-template-areas:
     'lCol1 lCol2 lCol11 lCol10 lCol3 lCol4'
     'lCol5 lCol6 lCol12 lCol9 lCol7 lCol8';
@@ -566,7 +566,7 @@
 
 .grid-creature {
   display: grid;
-  border: 2px solid var(--babylon5yellow);
+  border: 2px solid var(--babylon5borders);
   grid-template-areas:
     // 'vChar1 vChar1  '
 
@@ -604,7 +604,7 @@
 }
 .grid-planet-header {
   display: grid;
-  border: 2px solid var(--babylon5yellow);
+  border: 2px solid var(--babylon5borders);
   grid-template-areas:
     'hplan1 hplan2 '
     'hplan3 hplan4'
@@ -677,7 +677,7 @@
     'sys1 sys2 sys3 sys4'
     'sys5 sys6 sys7 sys8';
   grid-template-columns: 14em 15em 10em 2em;
-  border-color: var(--babylon5yellow);
+  border-color: var(--babylon5borders);
   border-bottom: double;
 }
 
@@ -716,13 +716,13 @@
 
 .grid-Char-Att {
   display: grid;
-  // border: 2px solid var(--babylon5yellow);
+  // border: 2px solid var(--babylon5borders);
   padding-bottom: 4px;
   padding-top: 5px;
   padding-left: 30px;
   grid-row-gap: 3px;
   grid-column-gap: 10px;
-  border-color: var(--babylon5yellow);
+  border-color: var(--babylon5borders);
   align-items: center;
   grid-template-areas:
     'gCol1 gCol2 gCol3 gCol4 gCol5'
