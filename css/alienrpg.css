@@ -80,7 +80,7 @@
 
 .alienrpg .window-content {
   font-family: var(--babylon5font);
-  color: var(--babylon5text);
+  color: var(--babylon5borders);
   font-size: var(--fontsize);
   background: var(--backgroundColour);
   -webkit-box-orient: vertical;
@@ -1653,6 +1653,7 @@ button:focus {
   padding: 0px;
   margin: 0 5px 5px 5px;
   border-bottom: 0;
+  color: var(--babylon5text);
 }
 
 .alienrpg h1.charname input {
