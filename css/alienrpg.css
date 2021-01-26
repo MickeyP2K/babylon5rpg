@@ -46,11 +46,12 @@
 }
 
 :root {
-  --babylon5borders: #6e6e6e;
+  --babylon5borders: #999;
   --babylon5text: #c9d251;
   --babylon5blue: #07215D;
   --blue: #577ee7;
   --backgroundColour: #000;
+  --windowBackground: rgba(0, 0, 0, 0.3);
   --white: #ffffff;
 }
 
@@ -82,7 +83,7 @@
   font-family: var(--babylon5font);
   color: var(--babylon5borders);
   font-size: var(--fontsize);
-  background: url(/systems/babylon5rpg/ui/starfield-bg.gif) repeat;
+  /* make it all look like glass background: url(/systems/babylon5rpg/ui/starfield-bg.gif) repeat; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1613,7 +1614,7 @@ button:focus {
   -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 1px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--backgroundColour);
 }
 
 .alienrpg .vehicle-header {
@@ -1622,7 +1623,7 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1px;
-  background-color: #000;
+  background-color: var(--backgroundColour);
 }
 
 .alienrpg .profile-img {
@@ -1673,7 +1674,7 @@ button:focus {
 .alienrpg .tab,
 .alienrpg .editor {
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--backgroundColour);
 }
 
 .alienrpg .tox .tox-editor-container {

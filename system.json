@@ -2,7 +2,7 @@
   "name": "babylon5rpg",
   "title": "Babylon 5 RPG",
   "description": "A Babylon 5 game system using the Free League Publishing game mechanics for Foundry VTT,",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "minimumCoreVersion": "0.5.7",
   "compatibleCoreVersion": "0.7.9",
   "author": "Michael Power",
