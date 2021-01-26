@@ -83,6 +83,7 @@
   font-family: var(--babylon5font);
   color: var(--babylon5borders);
   font-size: var(--fontsize);
+  background: none;
   /* make it all look like glass background: url(/systems/babylon5rpg/ui/starfield-bg.gif) repeat; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1614,7 +1615,7 @@ button:focus {
   -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 1px;
-  background-color: var(--backgroundColour);
+  background-color: var(--windowBackground);
 }
 
 .alienrpg .vehicle-header {
@@ -1623,7 +1624,7 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1px;
-  background-color: var(--backgroundColour);
+  background-color: var(--windowBackground);
 }
 
 .alienrpg .profile-img {
@@ -1674,7 +1675,7 @@ button:focus {
 .alienrpg .tab,
 .alienrpg .editor {
   height: 100%;
-  background-color: var(--backgroundColour);
+  background-color: var(--windowBackground);
 }
 
 .alienrpg .tox .tox-editor-container {
