@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'Babylon5';
-  src: local("Babylon5"), url(/systems/babylon5rpg/fonts/b5.ttf) format("truetype");
+  src: local("Babylon5"), url(/systems/babylon5rpg/fonts/b5.ttf); /* see if works without this format("truetype");*/
 }
 
 :root {
@@ -46,7 +46,7 @@
 }
 
 :root {
-  --babylon5borders: #999;
+  --babylon5borders: #ccc;
   --babylon5text: #c9d251;
   --babylon5blue: #07215D;
   --blue: #577ee7;
