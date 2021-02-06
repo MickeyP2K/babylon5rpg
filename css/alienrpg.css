@@ -435,7 +435,7 @@ button:focus {
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent transparent greenyellow;
+  border-color: transparent transparent transparent var(--babylon5borders);
 }
 
 .tooltip:hover .tooltiptext {
@@ -1467,7 +1467,7 @@ button:focus {
   left: 1px;
   background: #ff1e00;
   height: 8px;
-  border: 1px solid #b9ca1d;
+  border: 1px solid var(--babylon5borders);
   border-radius: 3px;
 }
 
