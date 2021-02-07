@@ -1,4 +1,4 @@
-export class alienrpgrTableGet extends Actor {
+export class babylon5rpgrTableGet extends Actor {
   constructor(options = {}) {
     super(options);
   }

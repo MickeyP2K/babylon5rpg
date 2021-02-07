@@ -2,19 +2,19 @@
   <header class="vehicle-header">
     <!-- <img class=profile-img-item" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="100" width="100" /> -->
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "ALIENRPG.Name"}}" /></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "BABYLON5RPG.Name"}}" /></h1>
 
       <div class="resources grid-planet-header">
-        <h3 class="resource-label hplan1">{{localize "ALIENRPG.CommonName"}}</h3>
+        <h3 class="resource-label hplan1">{{localize "BABYLON5RPG.CommonName"}}</h3>
         <input type="text" class="hplan2 textbox2" name="data.header.commonName.value" value="{{data.header.commonName.value}}" data-dtype="text" />
 
-        <h3 class="resource-label hplan3">{{localize "ALIENRPG.System"}}</h3>
+        <h3 class="resource-label hplan3">{{localize "BABYLON5RPG.System"}}</h3>
         <input type="text" class="hplan4 textbox2" name="data.header.system.value" value="{{data.header.system.value}}" data-dtype="text" />
 
-        <h3 class="resource-label hplan5">{{localize "ALIENRPG.Sector"}}</h3>
+        <h3 class="resource-label hplan5">{{localize "BABYLON5RPG.Sector"}}</h3>
         <input type="text" class="hplan6 textbox2" name="data.header.sector.value" value="{{data.header.sector.value}}" data-dtype="text" />
 
-        <h3 class="resource-label hplan7">{{localize "ALIENRPG.Location"}}</h3>
+        <h3 class="resource-label hplan7">{{localize "BABYLON5RPG.Location"}}</h3>
         <input type="text" class="hplan8 textbox2" name="data.header.location.value" value="{{data.header.location.value}}" data-dtype="text" />
       </div>
     </div>
@@ -22,8 +22,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="details">{{localize "ALIENRPG.Details"}}</a>
-    <a class="item" data-tab="description">{{localize "ALIENRPG.Description"}}</a>
+    <a class="item" data-tab="details">{{localize "BABYLON5RPG.Details"}}</a>
+    <a class="item" data-tab="description">{{localize "BABYLON5RPG.Description"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -31,39 +31,39 @@
     {{!-- Attributes Tab --}}
     <div class="tab details" data-group="primary" data-tab="details">
       <div class="plan1">
-        <label class="resource-label">{{localize "ALIENRPG.Affiliation"}}</label>
+        <label class="resource-label">{{localize "BABYLON5RPG.Affiliation"}}</label>
         <textarea name="data.details.affiliation.value" rows="2" data-dtype="String">{{data.details.affiliation.value}}</textarea>
       </div>
       <div class="grid-planet">
         <div class="plan2">
-          <label class="resource-label">{{localize "ALIENRPG.Classification"}}</label>
+          <label class="resource-label">{{localize "BABYLON5RPG.Classification"}}</label>
           <input type="text" class="textbox1" name="data.details.classification.value" value="{{data.details.classification.value}}" data-dtype="text" />
         </div>
         <div class="plan3">
-          <label class="resource-label">{{localize "ALIENRPG.population"}}</label>
+          <label class="resource-label">{{localize "BABYLON5RPG.population"}}</label>
           <input type="text" class="textbox" name="data.details.population.value" value="{{data.details.population.value}}" data-dtype="text" />
         </div>
         <div class="plan4">
-          <label class="resource-label">{{localize "ALIENRPG.meanTemperature"}}</label>
+          <label class="resource-label">{{localize "BABYLON5RPG.meanTemperature"}}</label>
           <input type="text" class="textbox2" name="data.details.meanTemperature.value" value="{{data.details.meanTemperature.value}}" data-dtype="text" />
         </div>
       </div>
-      <label class="resource-label">{{localize "ALIENRPG.climate"}}</label>
+      <label class="resource-label">{{localize "BABYLON5RPG.climate"}}</label>
       <textarea name="data.details.climate.value" rows="2" data-dtype="String">{{data.details.climate.value}}</textarea>
 
-      <label class="resource-label">{{localize "ALIENRPG.terrain"}}</label>
+      <label class="resource-label">{{localize "BABYLON5RPG.terrain"}}</label>
       <textarea name="data.details.terrain.value" rows="2" data-dtype="String">{{data.details.terrain.value}}</textarea>
 
-      <label class="resource-label">{{localize "ALIENRPG.colonies"}}</label>
+      <label class="resource-label">{{localize "BABYLON5RPG.colonies"}}</label>
       <textarea name="data.details.colonies.value" rows="2" data-dtype="String">{{data.details.colonies.value}}</textarea>
 
-      <label class="resource-label">{{localize "ALIENRPG.keyResources"}}</label>
+      <label class="resource-label">{{localize "BABYLON5RPG.keyResources"}}</label>
       <textarea name="data.details.keyResources.value" rows="2" data-dtype="String">{{data.details.keyResources.value}}</textarea>
     </div>
 
     {{!-- Notes Tab --}}
     <div class="tab item" data-group="primary" data-tab="description">
-      <!-- <label class="resource-label">{{localize "ALIENRPG.Description"}}</label> -->
+      <!-- <label class="resource-label">{{localize "BABYLON5RPG.Description"}}</label> -->
       <textarea name="data.misc.comment.value" rows="25" data-dtype="String">{{data.misc.comment.value}}</textarea>
     </div>
   </section>

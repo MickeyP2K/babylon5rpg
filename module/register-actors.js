@@ -1,35 +1,35 @@
-import alienrpgActorSheet from './actor/actor-sheet.js';
-import alienrpgSynthActorSheet from './actor/synth-sheet.js';
-import ActorSheetAlienRPGVehicle from './actor/vehicles.js';
-import ActorSheetAlienRPGCreat from './actor/creature.js';
-import ActorSheetAlienRPGTerritory from './actor/territory.js';
+import babylon5rpgActorSheet from './actor/actor-sheet.js';
+import babylon5rpgSynthActorSheet from './actor/synth-sheet.js';
+import ActorSheetBabylon5RPGVehicle from './actor/vehicles.js';
+import ActorSheetBabylon5RPGCreat from './actor/creature.js';
+import ActorSheetBabylon5RPGTerritory from './actor/territory.js';
 
 function registerActors() {
   Actors.unregisterSheet('core', ActorSheet); // Register Character Sheet
 
-  Actors.registerSheet('alienrpg', alienrpgActorSheet, {
+  Actors.registerSheet('babylon5rpg', babylon5rpgActorSheet, {
     types: ['character'],
     makeDefault: true,
   });
 
-  Actors.registerSheet('alienrpg', alienrpgSynthActorSheet, {
+  Actors.registerSheet('babylon5rpg', babylon5rpgSynthActorSheet, {
     types: ['synthetic'],
     makeDefault: true,
   });
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGVehicle, {
+  Actors.registerSheet('babylon5rpg', ActorSheetBabylon5RPGVehicle, {
     types: ['vehicles'],
     makeDefault: true,
   }); // Register vehicle Sheet
 
   // console.warn('Reg: Got here');
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGCreat, {
+  Actors.registerSheet('babylon5rpg', ActorSheetBabylon5RPGCreat, {
     types: ['creature'],
     makeDefault: true,
   }); // Register vehicle Sheet
 
-  Actors.registerSheet('alienrpg', ActorSheetAlienRPGTerritory, {
+  Actors.registerSheet('babylon5rpg', ActorSheetBabylon5RPGTerritory, {
     types: ['territory'],
     makeDefault: true,
   }); // Register Territory Sheet

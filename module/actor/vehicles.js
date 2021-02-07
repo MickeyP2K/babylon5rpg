@@ -4,7 +4,7 @@ import { yze } from '../YZEDiceRoller.js';
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetAlienRPGVehicle extends ActorSheet {
+export class ActorSheetBabylon5RPGVehicle extends ActorSheet {
   constructor(...args) {
     super(...args);
 
@@ -22,7 +22,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'vehicles-sheet'],
+      classes: ['babylon5rpg', 'sheet', 'actor', 'vehicles-sheet'],
       // template: 'systems/babylon5rpg/templates/actor/vehicles-sheet.html',
       width: 745,
       height: 510,
@@ -54,7 +54,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
       isCreature: this.entity.data.type === 'creature',
       isNPC: this.entity.data.data.header.npc,
       isGM: game.user.isGM,
-      config: CONFIG.ALIENRPG,
+      config: CONFIG.BABYLON5RPG,
     };
 
     // The Actor and its Items
@@ -109,7 +109,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
     //     item.isStack = item.data.quantity ? item.data.quantity > 1 : false;
 
     //     // Classify items into types
-    //     // console.log('alienrpgActorSheet -> _prepareItems -> item', item);
+    //     // console.log('babylon5rpgActorSheet -> _prepareItems -> item', item);
     //     // if (item.type === 'talent') arr[1].push(item);
     //     // else if (item.type === 'feat') arr[2].push(item);
     //     // else if (item.type === 'feature') arr[3].push(item);
@@ -145,7 +145,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
     if (!this.options.editable) return;
     const itemContextMenu = [
       {
-        name: game.i18n.localize('ALIENRPG.EditItem'),
+        name: game.i18n.localize('BABYLON5RPG.EditItem'),
         icon: '<i class="fas fa-edit"></i>',
         callback: (element) => {
           const item = this.actor.getOwnedItem(element.data('item-id'));
@@ -153,7 +153,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
         },
       },
       {
-        name: game.i18n.localize('ALIENRPG.DeleteItem'),
+        name: game.i18n.localize('BABYLON5RPG.DeleteItem'),
         icon: '<i class="fas fa-trash"></i>',
         callback: (element) => {
           this.actor.deleteOwnedItem(element.data('item-id'));
@@ -164,7 +164,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
     // Add Inventory Item
     new ContextMenu(html, '.item-edit', itemContextMenu);
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('babylon5rpg', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));
@@ -240,7 +240,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
   _inlineedit(event) {
     event.preventDefault();
     const dataset = event.currentTarget;
-    // console.log('alienrpgActorSheet -> _inlineedit -> dataset', dataset);
+    // console.log('babylon5rpgActorSheet -> _inlineedit -> dataset', dataset);
     let itemId = dataset.parentElement.dataset.itemId;
     let item = this.actor.getOwnedItem(itemId);
     let field = dataset.name;
@@ -266,7 +266,7 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
   }
 
   _rollItem(event) {
-    // console.log('alienrpgActorSheet -> _rollItem -> event', event);
+    // console.log('babylon5rpgActorSheet -> _rollItem -> event', event);
     event.preventDefault();
     const itemId = $(event.currentTarget).parents('.item').attr('data-item-id');
     const item = this.actor.getOwnedItem(itemId);
@@ -324,4 +324,4 @@ export class ActorSheetAlienRPGVehicle extends ActorSheet {
     }
   }
 }
-export default ActorSheetAlienRPGVehicle;
+export default ActorSheetBabylon5RPGVehicle;

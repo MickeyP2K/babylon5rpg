@@ -5,7 +5,7 @@ import { toNumber } from '../utils.js';
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class alienrpgSynthActorSheet extends ActorSheet {
+export class babylon5rpgSynthActorSheet extends ActorSheet {
   constructor(...args) {
     super(...args);
 
@@ -21,7 +21,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'synth-sheet'],
+      classes: ['babylon5rpg', 'sheet', 'actor', 'synth-sheet'],
       // template: 'systems/babylon5rpg/templates/actor/actor-sheet.html',
       width: 740,
       height: 710,
@@ -52,7 +52,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
       isCreature: this.entity.data.type === 'creature',
       isNPC: this.entity.data.data.header.npc,
       isGM: game.user.isGM,
-      config: CONFIG.ALIENRPG,
+      config: CONFIG.BABYLON5RPG,
     };
 
     // The Actor and its Items
@@ -209,7 +209,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     if (!this.options.editable) return;
     const itemContextMenu = [
       {
-        name: game.i18n.localize('ALIENRPG.EditItem'),
+        name: game.i18n.localize('BABYLON5RPG.EditItem'),
         icon: '<i class="fas fa-edit"></i>',
         callback: (element) => {
           const item = this.actor.getOwnedItem(element.data('item-id'));
@@ -217,7 +217,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
         },
       },
       {
-        name: game.i18n.localize('ALIENRPG.DeleteItem'),
+        name: game.i18n.localize('BABYLON5RPG.DeleteItem'),
         icon: '<i class="fas fa-trash"></i>',
         callback: (element) => {
           this.actor.deleteOwnedItem(element.data('item-id'));
@@ -228,7 +228,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     // Add Inventory Item
     new ContextMenu(html, '.item-edit', itemContextMenu);
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('babylon5rpg', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));
@@ -293,7 +293,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     let itemId = dataset.parentElement.dataset.itemId;
     let item = this.actor.getOwnedItem(itemId);
     let field = dataset.name;
-    // console.log('alienrpgActorSheet -> _inlineedit -> field', field);
+    // console.log('babylon5rpgActorSheet -> _inlineedit -> field', field);
     return item.update({ [field]: dataset.value }, {});
   }
 
@@ -349,7 +349,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-    // console.warn('alienrpgActorSheet -> _minusButton -> elemdatasetent', dataset);
+    // console.warn('babylon5rpgActorSheet -> _minusButton -> elemdatasetent', dataset);
     this.actor.stressChange(this.actor, dataset);
   }
 
@@ -367,7 +367,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     let langStr = langItem;
 
     var newLangStr = langStr.replace(/\s+/g, '');
-    let langTemp = 'ALIENRPG.' + [newLangStr];
+    let langTemp = 'BABYLON5RPG.' + [newLangStr];
     temp3 = game.i18n.localize(langTemp);
 
     try {
@@ -421,7 +421,7 @@ export class alienrpgSynthActorSheet extends ActorSheet {
       // item = dataset.pmbut;
       // str = item;
       var newStr = str.replace(/\s+/g, '');
-      temp1 = 'ALIENRPG.' + [newStr];
+      temp1 = 'BABYLON5RPG.' + [newStr];
       temp3 = game.i18n.localize(temp1);
       if (temp3.startsWith('<p>')) {
         chatData = temp3;
@@ -495,8 +495,8 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-    const lTemp = 'ALIENRPG.' + dataset.spbutt;
-    const label = game.i18n.localize(lTemp) + ' ' + game.i18n.localize('ALIENRPG.Supply');
+    const lTemp = 'BABYLON5RPG.' + dataset.spbutt;
+    const label = game.i18n.localize(lTemp) + ' ' + game.i18n.localize('BABYLON5RPG.Supply');
     const consUme = dataset.spbutt.toLowerCase();
     let mItems = this.actor.items;
     let numbers = [];
@@ -546,4 +546,4 @@ export class alienrpgSynthActorSheet extends ActorSheet {
     this.actor.consumablesCheck(this.actor, consUme, label, numbers);
   }
 }
-export default alienrpgSynthActorSheet;
+export default babylon5rpgSynthActorSheet;

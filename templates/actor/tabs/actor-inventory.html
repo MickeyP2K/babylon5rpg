@@ -1,7 +1,7 @@
 <ol class="items-list">
     {{#if isCharacter }}
     {{#with data.general.encumbrance}}
-    <div class="encumbrance-label">{{localize "ALIENRPG.Encumbrance"}} - {{value}} / {{max}}</div>
+    <div class="encumbrance-label">{{localize "BABYLON5RPG.Encumbrance"}} - {{value}} / {{max}}</div>
     <div class="encumbrance {{#if encumbered}}encumbered blink{{/if}}">
         <span class="encumbrance-bar" style="width:{{pct}}%"></span>
         <i class="encumbrance-breakpoint encumbrance-33 arrow-up"></i>
@@ -13,21 +13,21 @@
     {{/with}}
     {{/if}}
     <!-- Display Active Items -->
-    <h2 class="">{{localize "ALIENRPG.Active"}}</h2>
+    <h2 class="">{{localize "BABYLON5RPG.Active"}}</h2>
     {{#each sections as |section sid|}}
     <li class=" grid-items item-header">
       <div class="item-name lCol1">{{section.label}}</div>
-      <div class="item-name lCol2">{{localize "ALIENRPG.Name"}}</div>
-      <!-- <div class="item-detail item-weight lCol10">{{localize "ALIENRPG.Damage"}}</div> -->
+      <div class="item-name lCol2">{{localize "BABYLON5RPG.Name"}}</div>
+      <!-- <div class="item-detail item-weight lCol10">{{localize "BABYLON5RPG.Damage"}}</div> -->
       {{#ife section.label 'Weapons'}}
-      <div class="item-detail lCol10">{{localize "ALIENRPG.Dam"}}</div>
-      <div class="item-detail item-weight lCol11">{{localize "ALIENRPG.Rds"}}</div>
+      <div class="item-detail lCol10">{{localize "BABYLON5RPG.Dam"}}</div>
+      <div class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Rds"}}</div>
       {{/ife}}
       {{#ife section.label 'Items'}}
-      <span class="item-detail item-weight lCol11">{{localize "ALIENRPG.Food"}}</span>
-      <span class="item-detail item-weight lCol10">{{localize "ALIENRPG.Water"}}</span>
+      <span class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Food"}}</span>
+      <span class="item-detail item-weight lCol10">{{localize "BABYLON5RPG.Water"}}</span>
       {{/ife}}
-      <div class="item-detail item-weight lCol3">{{localize "ALIENRPG.AbbreviationKg"}}</div>
+      <div class="item-detail item-weight lCol3">{{localize "BABYLON5RPG.AbbreviationKg"}}</div>
 
 
     </li>
@@ -51,10 +51,10 @@
 <!-- </div>
                 </div> -->
                 {{/ife}}
-                <div class="item-detail lCol7" style="font-size: smaller;">{{ item.totalWeight }} {{localize "ALIENRPG.AbbreviationKg"}}</div>
+                <div class="item-detail lCol7" style="font-size: smaller;">{{ item.totalWeight }} {{localize "BABYLON5RPG.AbbreviationKg"}}</div>
                 <div class="item-controls lCol8">
-                  <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'ALIENRPG.EditItem'}}"><i class="fas fa-edit"></i></a>
-                  <!-- <a class="item-control item-delete" title="{{localize "ALIENRPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
+                  <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'BABYLON5RPG.EditItem'}}"><i class="fas fa-edit"></i></a>
+                  <!-- <a class="item-control item-delete" title="{{localize "BABYLON5RPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
                 </div>
       </li>
 
@@ -66,24 +66,24 @@
 <br><br>
 
 <!-- Display Owned -->
-    <h2 class="">{{localize "ALIENRPG.Inactive"}}</h2>
+    <h2 class="">{{localize "BABYLON5RPG.Inactive"}}</h2>
     {{#each sections as |section sid|}}
     <li class=" grid-items item-header">
       <div class="item-name lCol1">{{section.label}}</div>
-      <div class="item-name lCol2">{{localize "ALIENRPG.Name"}}</div>
-      <!-- <div class="item-detail item-weight lCol10">{{localize "ALIENRPG.Damage"}}</div> -->
+      <div class="item-name lCol2">{{localize "BABYLON5RPG.Name"}}</div>
+      <!-- <div class="item-detail item-weight lCol10">{{localize "BABYLON5RPG.Damage"}}</div> -->
       {{#ife section.label 'Weapons'}}
-      <div class="item-detail lCol10">{{localize "ALIENRPG.Dam"}}</div>
-      <div class="item-detail item-weight lCol11">{{localize "ALIENRPG.Rds"}}</div>
+      <div class="item-detail lCol10">{{localize "BABYLON5RPG.Dam"}}</div>
+      <div class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Rds"}}</div>
       {{/ife}}
       {{#ife section.label 'Items'}}
-      <!-- <div class="item-detail item-weight lCol11">{{localize "ALIENRPG.Food"}}</div> -->
-      <span class="item-detail item-weight lCol11">{{localize "ALIENRPG.Food"}}</span>
-      <span class="item-detail item-weight lCol10">{{localize "ALIENRPG.Water"}}</span>
+      <!-- <div class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Food"}}</div> -->
+      <span class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Food"}}</span>
+      <span class="item-detail item-weight lCol10">{{localize "BABYLON5RPG.Water"}}</span>
       {{/ife}}
 
 
-      <div class="item-detail item-weight lCol3">{{localize "ALIENRPG.AbbreviationKg"}}</div>
+      <div class="item-detail item-weight lCol3">{{localize "BABYLON5RPG.AbbreviationKg"}}</div>
     </li>
     {{#each section.items as |item iid|}}
     {{#ife item.data.header.active false}}
@@ -105,10 +105,10 @@
 <!-- </div>
                 </div> -->
                 {{/ife}}
-                <div class="item-detail lCol7" style="font-size: smaller;">{{ item.totalWeight }} {{localize "ALIENRPG.AbbreviationKg"}}</div>
+                <div class="item-detail lCol7" style="font-size: smaller;">{{ item.totalWeight }} {{localize "BABYLON5RPG.AbbreviationKg"}}</div>
                 <div class="item-controls lCol8">
-                  <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'ALIENRPG.EditItem'}}"><i class="fas fa-edit"></i></a>
-                  <!-- <a class="item-control item-delete" title="{{localize "ALIENRPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
+                  <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'BABYLON5RPG.EditItem'}}"><i class="fas fa-edit"></i></a>
+                  <!-- <a class="item-control item-delete" title="{{localize "BABYLON5RPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
                 </div>
       </li>
 

@@ -3,21 +3,21 @@
   <header class="vehicle-header">
     <!-- <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.img}}"  /> -->
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ALIENRPG.Name"}}" /></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "BABYLON5RPG.Name"}}" /></h1>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="general">{{localize "ALIENRPG.General"}}</a>
-    <a class="item" data-tab="systems">{{localize "ALIENRPG.Systems"}}</a>
+    <a class="item" data-tab="general">{{localize "BABYLON5RPG.General"}}</a>
+    <a class="item" data-tab="systems">{{localize "BABYLON5RPG.Systems"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <div class="tab attributes" data-group="primary" data-tab="general">
-      <h2 class="resource-label">{{localize "ALIENRPG.Description"}}</h2>
+      <h2 class="resource-label">{{localize "BABYLON5RPG.Description"}}</h2>
       <textarea name="data.comment.value" rows="13" data-dtype="String">{{data.comment.value}}</textarea>
-      <h2 class="resource-label">{{localize "ALIENRPG.Sectors"}}</h2>
+      <h2 class="resource-label">{{localize "BABYLON5RPG.Sectors"}}</h2>
       <textarea name="data.sectors.value" rows="13" data-dtype="String">{{data.sectors.value}}</textarea>
     </div>
 
@@ -25,9 +25,9 @@
     <!-- INVENTORY -->
     <div class="tab systems" data-group="primary" data-tab="systems">
       <li class="grid-systems">
-        <label class="item-name sys1">{{localize "ALIENRPG.Sector"}}</label>
-        <label class="item-name sys2">{{localize "ALIENRPG.System"}}</label>
-        <label class="item-name sys3">{{localize "ALIENRPG.Name"}}</label>
+        <label class="item-name sys1">{{localize "BABYLON5RPG.Sector"}}</label>
+        <label class="item-name sys2">{{localize "BABYLON5RPG.System"}}</label>
+        <label class="item-name sys3">{{localize "BABYLON5RPG.Name"}}</label>
         <div class="item-controls sys4">
           <a class="item-control item-create" style="font-size: smaller;" title="Create item" data-type="planet-system"><i class="fas fa-plus"></i></a>
         </div>

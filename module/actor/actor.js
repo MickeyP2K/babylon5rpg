@@ -4,11 +4,11 @@ import { yze } from '../YZEDiceRoller.js';
  * @extends {Actor}
  */
 
-export class alienrpgActor extends Actor {
+export class babylon5rpgActor extends Actor {
   /** @override */
   getRollData() {
     const data = super.getRollData();
-    const shorthand = game.settings.get('alienrpg', 'macroShorthand');
+    const shorthand = game.settings.get('babylon5rpg', 'macroShorthand');
 
     // Re-map all attributes onto the base roll data
     if (!!shorthand) {
@@ -101,7 +101,7 @@ export class alienrpgActor extends Actor {
       if (Attrib.type === 'item') {
         if (Attrib.data.header.active) {
           let base = Attrib.data.modifiers.attributes;
-          console.log('🚀 ~ file: actor.js ~ line 104 ~ alienrpgActor ~ _prepareCharacterData ~ base', base);
+          console.log('🚀 ~ file: actor.js ~ line 104 ~ babylon5rpgActor ~ _prepareCharacterData ~ base', base);
           for (let [bkey, aAttrib] of Object.entries(base)) {
             switch (bkey) {
               case 'str':
@@ -215,7 +215,7 @@ export class alienrpgActor extends Actor {
       setProperty(actorData, target, (field = upData));
 
       // abl.mod = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
-      abl.label = CONFIG.ALIENRPG.attributes[a];
+      abl.label = CONFIG.BABYLON5RPG.attributes[a];
     }
 
     for (let [s, skl] of Object.entries(data.skills)) {
@@ -224,7 +224,7 @@ export class alienrpgActor extends Actor {
       let field = data.skills[s].mod;
       let upData = parseInt(skl.value || 0) + parseInt(actorData.data.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
       setProperty(actorData, target, (field = upData));
-      skl.label = CONFIG.ALIENRPG.skills[s];
+      skl.label = CONFIG.BABYLON5RPG.skills[s];
     }
     // Loop through the items and update the actors AC
     let totalAc = 0;
@@ -294,7 +294,7 @@ export class alienrpgActor extends Actor {
   _prepareVehicleData(data) {}
   _prepareCreatureData(actorData) {
     // super.prepareDerivedData();
-    // console.log('🚀 ~ file: actor.js ~ line 268 ~ alienrpgActor ~ _prepareCreatureData ~ data', actorData);
+    // console.log('🚀 ~ file: actor.js ~ line 268 ~ babylon5rpgActor ~ _prepareCreatureData ~ data', actorData);
     // // this.actor.update({ 'data.header.health.tmp': this.actor.data.data.header.health.value });
     // if (actorData.header.health.max === 0 || actorData.header.health.value > actorData.header.health.max) {
     //   // this.actor.update({ 'data.header.health.max': this.actor.data.data.header.health.value });
@@ -304,7 +304,7 @@ export class alienrpgActor extends Actor {
   _prepareTeritoryData(data) {}
 
   _prepareTokenImg() {
-    if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
+    if (game.settings.get('babylon5rpg', 'defaultTokenSettings')) {
       if (this.data.token.img == 'icons/svg/mystery-man.svg' && this.data.token.img != this.img) {
         this.data.token.img = this.img;
       }
@@ -315,7 +315,7 @@ export class alienrpgActor extends Actor {
     let label = dataset.label;
     let r2Data = 0;
     let reRoll = false;
-    game.alienrpg.rollArr.sCount = 0;
+    game.babylon5rpg.rollArr.sCount = 0;
     if (dataset.roll) {
       let r1Data = parseInt(dataset.roll || 0) + parseInt(dataset.mod || 0);
       if (dataset.attr) {
@@ -341,8 +341,8 @@ export class alienrpgActor extends Actor {
         // hostile = true;
         blind = true;
       }
-      yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-      game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+      yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+      game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
     } else {
       if (dataset.panicroll) {
         // Roll against the panic table and push the roll to the chat log.
@@ -360,7 +360,7 @@ export class alienrpgActor extends Actor {
           actor.update({ 'data.general.panic.value': actor.data.data.general.panic.value + 1 });
         }
 
-        chatMessage += '<h2 style=" color: #f71403; font-weight: bold;" >' + game.i18n.localize('ALIENRPG.PanicCondition') + '</h2>';
+        chatMessage += '<h2 style=" color: #f71403; font-weight: bold;" >' + game.i18n.localize('BABYLON5RPG.PanicCondition') + '</h2>';
         chatMessage += `<h4><i>${table.data.description}</i></h4>`;
         let mPanic = customResults.roll.total < actor.data.data.general.panic.lastRoll;
 
@@ -370,39 +370,39 @@ export class alienrpgActor extends Actor {
 
           chatMessage +=
             '<h4 style="font-weight: bolder"><i><b>' +
-            game.i18n.localize('ALIENRPG.Roll') +
+            game.i18n.localize('BABYLON5RPG.Roll') +
             ' ' +
             `${customResults.roll.total}` +
             ' ' +
             '<span style="color: #f71403;font-weight: bolder"><i><b>' +
-            game.i18n.localize('ALIENRPG.MorePanic') +
+            game.i18n.localize('BABYLON5RPG.MorePanic') +
             '</span></b></i></span></h4>';
 
           chatMessage +=
             '<h4><i>' +
-            game.i18n.localize('ALIENRPG.PCPanicLevel') +
+            game.i18n.localize('BABYLON5RPG.PCPanicLevel') +
             '<b style="color: #f71403;">' +
-            game.i18n.localize('ALIENRPG.Level') +
+            game.i18n.localize('BABYLON5RPG.Level') +
             ' ' +
             `${pCheck}` +
             ' ' +
-            game.i18n.localize('ALIENRPG.Seepage104') +
+            game.i18n.localize('BABYLON5RPG.Seepage104') +
             '</b></i></h4>';
 
           chatMessage += this.morePanic(pCheck);
         } else {
           actor.update({ 'data.general.panic.lastRoll': customResults.roll.total });
           pCheck = customResults.roll.total;
-          chatMessage += '<h4><i><b>' + game.i18n.localize('ALIENRPG.Roll') + ' ' + `${pCheck}` + ' </b></i></h4>';
-          // chatMessage += game.i18n.localize(`ALIENRPG.${customResults.results[0].text}`);
+          chatMessage += '<h4><i><b>' + game.i18n.localize('BABYLON5RPG.Roll') + ' ' + `${pCheck}` + ' </b></i></h4>';
+          // chatMessage += game.i18n.localize(`BABYLON5RPG.${customResults.results[0].text}`);
           chatMessage += this.morePanic(pCheck);
           if (customResults.roll.total >= 7) {
-            chatMessage += `<h4 style="color: #f71403;"><i><b>` + game.i18n.localize('ALIENRPG.YouAreAtPanic') + ` <b>` + game.i18n.localize('ALIENRPG.Level') + ` ${pCheck}</b></i></h4>`;
+            chatMessage += `<h4 style="color: #f71403;"><i><b>` + game.i18n.localize('BABYLON5RPG.YouAreAtPanic') + ` <b>` + game.i18n.localize('BABYLON5RPG.Level') + ` ${pCheck}</b></i></h4>`;
           }
         }
         let trauma = customResults.roll.total >= 13 || pCheck >= 13;
         if (trauma) {
-          chatMessage += `<h4><b>` + game.i18n.localize('ALIENRPG.PermanantTrauma') + `<i>(` + game.i18n.localize('ALIENRPG.Seepage106') + `) </i></h4></b>`;
+          chatMessage += `<h4><b>` + game.i18n.localize('BABYLON5RPG.PermanantTrauma') + `<i>(` + game.i18n.localize('BABYLON5RPG.Seepage106') + `) </i></h4></b>`;
         }
         ChatMessage.create({ user: game.user._id, content: chatMessage, other: game.users.entities.filter((u) => u.isGM).map((u) => u._id), type: CONST.CHAT_MESSAGE_TYPES.OTHER });
       }
@@ -414,7 +414,7 @@ export class alienrpgActor extends Actor {
     let r2Data = 0;
     let reRoll = false;
     let template = 'systems/babylon5rpg/templates/dialog/roll-all-dialog.html';
-    game.alienrpg.rollArr.sCount = 0;
+    game.babylon5rpg.rollArr.sCount = 0;
     if (dataset.roll) {
       let r1Data = parseInt(dataset.roll || 0) + parseInt(dataset.mod || 0);
       if (dataset.attr) {
@@ -448,17 +448,17 @@ export class alienrpgActor extends Actor {
       if (actor.data.type === 'character') {
         renderTemplate(template).then((dlg) => {
           new Dialog({
-            title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+            title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
             content: dlg,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
-                label: game.i18n.localize('ALIENRPG.DialRoll'),
+                label: game.i18n.localize('BABYLON5RPG.DialRoll'),
                 callback: () => (confirmed = true),
               },
               two: {
                 icon: '<i class="fas fa-times"></i>',
-                label: game.i18n.localize('ALIENRPG.DialCancel'),
+                label: game.i18n.localize('BABYLON5RPG.DialCancel'),
                 callback: () => (confirmed = false),
               },
             },
@@ -469,8 +469,8 @@ export class alienrpgActor extends Actor {
                 let stressMod = parseInt(html.find('[name=stressMod]')[0].value);
                 r1Data = r1Data + modifier;
                 r2Data = r2Data + stressMod;
-                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
               }
             },
           }).render(true);
@@ -479,17 +479,17 @@ export class alienrpgActor extends Actor {
         template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
-            title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+            title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
             content: dlg,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
-                label: game.i18n.localize('ALIENRPG.DialRoll'),
+                label: game.i18n.localize('BABYLON5RPG.DialRoll'),
                 callback: () => (confirmed = true),
               },
               two: {
                 icon: '<i class="fas fa-times"></i>',
-                label: game.i18n.localize('ALIENRPG.DialCancel'),
+                label: game.i18n.localize('BABYLON5RPG.DialCancel'),
                 callback: () => (confirmed = false),
               },
             },
@@ -499,8 +499,8 @@ export class alienrpgActor extends Actor {
                 let modifier = parseInt(html.find('[name=modifier]')[0].value);
                 r1Data = r1Data + modifier;
                 r2Data = 0;
-                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
               }
             },
           }).render(true);
@@ -509,17 +509,17 @@ export class alienrpgActor extends Actor {
         template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
-            title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+            title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
             content: dlg,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
-                label: game.i18n.localize('ALIENRPG.DialRoll'),
+                label: game.i18n.localize('BABYLON5RPG.DialRoll'),
                 callback: () => (confirmed = true),
               },
               two: {
                 icon: '<i class="fas fa-times"></i>',
-                label: game.i18n.localize('ALIENRPG.DialCancel'),
+                label: game.i18n.localize('BABYLON5RPG.DialCancel'),
                 callback: () => (confirmed = false),
               },
             },
@@ -530,8 +530,8 @@ export class alienrpgActor extends Actor {
                 let modifier = parseInt(html.find('[name=modifier]')[0].value);
                 r1Data = r1Data + modifier;
                 r2Data = 0;
-                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
               }
             },
           }).render(true);
@@ -544,17 +544,17 @@ export class alienrpgActor extends Actor {
       let confirmed = false;
       renderTemplate(template).then((dlg) => {
         new Dialog({
-          title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+          title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
           content: dlg,
           buttons: {
             one: {
               icon: '<i class="fas fa-check"></i>',
-              label: game.i18n.localize('ALIENRPG.DialRoll'),
+              label: game.i18n.localize('BABYLON5RPG.DialRoll'),
               callback: () => (confirmed = true),
             },
             two: {
               icon: '<i class="fas fa-times"></i>',
-              label: game.i18n.localize('ALIENRPG.DialCancel'),
+              label: game.i18n.localize('BABYLON5RPG.DialCancel'),
               callback: () => (confirmed = false),
             },
           },
@@ -566,7 +566,7 @@ export class alienrpgActor extends Actor {
               const table = game.tables.getName('Panic Table');
               let aStress = actor.getRollData().stress + parseInt(actor.data.data.header.stress.mod);
               let modRoll = '1d6' + '+' + (parseInt(stressMod || 0) + parseInt(aStress || 0));
-              console.log('🚀 ~ file: actor.js ~ line 532 ~ alienrpgActor ~ renderTemplate ~ modRoll', modRoll);
+              console.log('🚀 ~ file: actor.js ~ line 532 ~ babylon5rpgActor ~ renderTemplate ~ modRoll', modRoll);
               const roll = new Roll(modRoll);
 
               const customResults = table.roll({ roll });
@@ -576,7 +576,7 @@ export class alienrpgActor extends Actor {
                 actor.update({ 'data.general.panic.value': actor.data.data.general.panic.value + 1 });
               }
 
-              chatMessage += '<h2 style=" color: #f71403; font-weight: bold;" >' + game.i18n.localize('ALIENRPG.PanicCondition') + '</h2>';
+              chatMessage += '<h2 style=" color: #f71403; font-weight: bold;" >' + game.i18n.localize('BABYLON5RPG.PanicCondition') + '</h2>';
               chatMessage += `<h4><i>${table.data.description}</i></h4>`;
               let mPanic = customResults.roll.total < actor.data.data.general.panic.lastRoll;
 
@@ -586,40 +586,40 @@ export class alienrpgActor extends Actor {
 
                 chatMessage +=
                   '<h4 style="font-weight: bolder"><i><b>' +
-                  game.i18n.localize('ALIENRPG.Roll') +
+                  game.i18n.localize('BABYLON5RPG.Roll') +
                   ' ' +
                   `${customResults.roll.total}` +
                   ' ' +
                   '<span style="color: #f71403;font-weight: bolder"><i><b>' +
-                  game.i18n.localize('ALIENRPG.MorePanic') +
+                  game.i18n.localize('BABYLON5RPG.MorePanic') +
                   '</span></b></i></span></h4>';
 
                 chatMessage +=
                   '<h4><i>' +
-                  game.i18n.localize('ALIENRPG.PCPanicLevel') +
+                  game.i18n.localize('BABYLON5RPG.PCPanicLevel') +
                   '<b style="color: #f71403;">' +
-                  game.i18n.localize('ALIENRPG.Level') +
+                  game.i18n.localize('BABYLON5RPG.Level') +
                   ' ' +
                   `${pCheck}` +
                   ' ' +
-                  game.i18n.localize('ALIENRPG.Seepage104') +
+                  game.i18n.localize('BABYLON5RPG.Seepage104') +
                   '</b></i></h4>';
 
                 chatMessage += this.morePanic(pCheck);
               } else {
                 actor.update({ 'data.general.panic.lastRoll': customResults.roll.total });
                 pCheck = customResults.roll.total;
-                chatMessage += '<h4><i><b>' + game.i18n.localize('ALIENRPG.DialRoll') + ' ' + `${customResults.roll.total}` + ' </b></i></h4>';
-                // chatMessage += game.i18n.localize(`ALIENRPG.${customResults.results[0].text}`);
+                chatMessage += '<h4><i><b>' + game.i18n.localize('BABYLON5RPG.DialRoll') + ' ' + `${customResults.roll.total}` + ' </b></i></h4>';
+                // chatMessage += game.i18n.localize(`BABYLON5RPG.${customResults.results[0].text}`);
                 chatMessage += this.morePanic(pCheck);
                 if (customResults.roll.total >= 7) {
                   chatMessage +=
-                    `<h4 style="color: #f71403;"><i><b>` + game.i18n.localize('ALIENRPG.YouAreAtPanic') + ` <b>` + game.i18n.localize('ALIENRPG.Level') + ` ${customResults.roll.total}</b></i></h4>`;
+                    `<h4 style="color: #f71403;"><i><b>` + game.i18n.localize('BABYLON5RPG.YouAreAtPanic') + ` <b>` + game.i18n.localize('BABYLON5RPG.Level') + ` ${customResults.roll.total}</b></i></h4>`;
                 }
               }
               let trauma = customResults.roll.total >= 13 || pCheck >= 13;
               if (trauma) {
-                chatMessage += `<h4><b>` + game.i18n.localize('ALIENRPG.PermanantTrauma') + `<i>(` + game.i18n.localize('ALIENRPG.Seepage106') + `) </i></h4></b>`;
+                chatMessage += `<h4><b>` + game.i18n.localize('BABYLON5RPG.PermanantTrauma') + `<i>(` + game.i18n.localize('BABYLON5RPG.Seepage106') + `) </i></h4></b>`;
               }
               ChatMessage.create({ user: game.user._id, content: chatMessage, other: game.users.entities.filter((u) => u.isGM).map((u) => u._id), type: CONST.CHAT_MESSAGE_TYPES.OTHER });
             }
@@ -694,10 +694,10 @@ export class alienrpgActor extends Actor {
       blind = true;
     }
     if (r2Data <= 0) {
-      return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoSupplys'));
+      return ui.notifications.warn(game.i18n.localize('BABYLON5RPG.NoSupplys'));
     } else {
-      yze.yzeRoll('supply', blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-      if (game.alienrpg.rollArr.r2One) {
+      yze.yzeRoll('supply', blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+      if (game.babylon5rpg.rollArr.r2One) {
         let itemId = consumables.find(showme)[0].item;
         let itemVal = consumables.find(showme)[0][`${consUme}`];
         let mitem = actor.getOwnedItem(itemId);
@@ -705,30 +705,30 @@ export class alienrpgActor extends Actor {
         switch (consUme) {
           case 'air':
             field = `data.attributes.airsupply.value`;
-            await mitem.update({ [field]: itemVal - game.alienrpg.rollArr.r2One });
-            await actor.update({ 'data.consumables.air.value': actor.data.data.consumables.air.value - game.alienrpg.rollArr.r2One });
+            await mitem.update({ [field]: itemVal - game.babylon5rpg.rollArr.r2One });
+            await actor.update({ 'data.consumables.air.value': actor.data.data.consumables.air.value - game.babylon5rpg.rollArr.r2One });
             break;
           case 'food':
             field = `data.attributes.${consUme}.value`;
-            await mitem.update({ [field]: itemVal - game.alienrpg.rollArr.r2One });
-            await actor.update({ 'data.consumables.food.value': actor.data.data.consumables.food.value - game.alienrpg.rollArr.r2One });
+            await mitem.update({ [field]: itemVal - game.babylon5rpg.rollArr.r2One });
+            await actor.update({ 'data.consumables.food.value': actor.data.data.consumables.food.value - game.babylon5rpg.rollArr.r2One });
             break;
           case 'power':
             field = `data.attributes.${consUme}.value`;
-            await mitem.update({ [field]: itemVal - game.alienrpg.rollArr.r2One });
-            await actor.update({ 'data.consumables.power.value': actor.data.data.consumables.power.value - game.alienrpg.rollArr.r2One });
+            await mitem.update({ [field]: itemVal - game.babylon5rpg.rollArr.r2One });
+            await actor.update({ 'data.consumables.power.value': actor.data.data.consumables.power.value - game.babylon5rpg.rollArr.r2One });
             break;
           case 'water':
             field = `data.attributes.${consUme}.value`;
-            await mitem.update({ [field]: itemVal - game.alienrpg.rollArr.r2One });
-            await actor.update({ 'data.consumables.water.value': actor.data.data.consumables.water.value - game.alienrpg.rollArr.r2One });
+            await mitem.update({ [field]: itemVal - game.babylon5rpg.rollArr.r2One });
+            await actor.update({ 'data.consumables.water.value': actor.data.data.consumables.water.value - game.babylon5rpg.rollArr.r2One });
             break;
         }
       }
     }
 
     function showme(consumables) {
-      // console.warn('alienrpgActorSheet -> showme -> ', consumables[0][consUme] >= 1);
+      // console.warn('babylon5rpgActorSheet -> showme -> ', consumables[0][consUme] >= 1);
       return consumables[0][consUme] >= 1;
     }
   }
@@ -758,17 +758,17 @@ export class alienrpgActor extends Actor {
       let confirmed = false;
       renderTemplate(template).then((dlg) => {
         new Dialog({
-          title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+          title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
           content: dlg,
           buttons: {
             one: {
               icon: '<i class="fas fa-check"></i>',
-              label: game.i18n.localize('ALIENRPG.DialRoll'),
+              label: game.i18n.localize('BABYLON5RPG.DialRoll'),
               callback: () => (confirmed = true),
             },
             two: {
               icon: '<i class="fas fa-times"></i>',
-              label: game.i18n.localize('ALIENRPG.DialCancel'),
+              label: game.i18n.localize('BABYLON5RPG.DialCancel'),
               callback: () => (confirmed = false),
             },
           },
@@ -785,8 +785,8 @@ export class alienrpgActor extends Actor {
     } else {
       // Roll against the panic table and push the roll to the chat log.
       let chatMessage = '';
-      chatMessage += '<h2>' + game.i18n.localize('ALIENRPG.AcidAttack') + '</h2>';
-      chatMessage += `<h4><i>` + game.i18n.localize('ALIENRPG.AcidBlood') + `</i></h4>`;
+      chatMessage += '<h2>' + game.i18n.localize('BABYLON5RPG.AcidAttack') + '</h2>';
+      chatMessage += `<h4><i>` + game.i18n.localize('BABYLON5RPG.AcidBlood') + `</i></h4>`;
       ChatMessage.create({ user: game.user._id, content: chatMessage, whisper: game.users.entities.filter((u) => u.isGM).map((u) => u._id), blind: true });
     }
   }
@@ -798,7 +798,7 @@ export class alienrpgActor extends Actor {
     const roll = new Roll('1d6');
 
     const customResults = table.roll({ roll });
-    chatMessage += '<h2>' + game.i18n.localize('ALIENRPG.AttackRoll') + '</h2>';
+    chatMessage += '<h2>' + game.i18n.localize('BABYLON5RPG.AttackRoll') + '</h2>';
     chatMessage += `<h4><i>${table.data.description}</i></h4>`;
     chatMessage += `${customResults.results[0].text}`;
     ChatMessage.create({ user: game.user._id, content: chatMessage, whisper: game.users.entities.filter((u) => u.isGM).map((u) => u._id), type: CONST.CHAT_MESSAGE_TYPES.WHISPER });
@@ -813,37 +813,37 @@ export class alienrpgActor extends Actor {
       case 4:
       case 5:
       case 6:
-        con = game.i18n.localize('ALIENRPG.Panic1');
+        con = game.i18n.localize('BABYLON5RPG.Panic1');
         break;
       case 7:
-        con = game.i18n.localize('ALIENRPG.Panic7');
+        con = game.i18n.localize('BABYLON5RPG.Panic7');
         break;
       case 8:
-        con = game.i18n.localize('ALIENRPG.Panic8');
+        con = game.i18n.localize('BABYLON5RPG.Panic8');
         break;
       case 9:
-        con = game.i18n.localize('ALIENRPG.Panic9');
+        con = game.i18n.localize('BABYLON5RPG.Panic9');
         break;
       case 10:
-        con = game.i18n.localize('ALIENRPG.Panic10');
+        con = game.i18n.localize('BABYLON5RPG.Panic10');
         break;
       case 11:
-        con = game.i18n.localize('ALIENRPG.Panic11');
+        con = game.i18n.localize('BABYLON5RPG.Panic11');
         break;
       case 12:
-        con = game.i18n.localize('ALIENRPG.Panic12');
+        con = game.i18n.localize('BABYLON5RPG.Panic12');
         break;
       case 13:
-        con = game.i18n.localize('ALIENRPG.Panic13');
+        con = game.i18n.localize('BABYLON5RPG.Panic13');
         break;
       case 14:
-        con = game.i18n.localize('ALIENRPG.Panic14');
+        con = game.i18n.localize('BABYLON5RPG.Panic14');
         break;
       default:
-        con = game.i18n.localize('ALIENRPG.Panic15');
+        con = game.i18n.localize('BABYLON5RPG.Panic15');
         break;
     }
     return con;
   }
 }
-export default alienrpgActor;
+export default babylon5rpgActor;

@@ -2,11 +2,11 @@
   <!-- Display Active Items -->
   <li class="grid-items item-header">
     <div class="item-name lCol1">{{section.label}}</div>
-    <div class="item-name lCol2">{{localize "ALIENRPG.Name"}}</div>
-    <!-- <div class="item-detail item-weight lCol10">{{localize "ALIENRPG.Damage"}}</div> -->
-    <div class="item-detail lCol10">{{localize "ALIENRPG.Dam"}}</div>
-    <div class="item-detail item-weight lCol11">{{localize "ALIENRPG.Rds"}}</div>
-    <div class="item-detail item-weight lCol3">{{localize "ALIENRPG.Power"}}</div>
+    <div class="item-name lCol2">{{localize "BABYLON5RPG.Name"}}</div>
+    <!-- <div class="item-detail item-weight lCol10">{{localize "BABYLON5RPG.Damage"}}</div> -->
+    <div class="item-detail lCol10">{{localize "BABYLON5RPG.Dam"}}</div>
+    <div class="item-detail item-weight lCol11">{{localize "BABYLON5RPG.Rds"}}</div>
+    <div class="item-detail item-weight lCol3">{{localize "BABYLON5RPG.Power"}}</div>
   </li>
 
   {{#each weapons as |item iid|}}
@@ -24,8 +24,8 @@
     <span class="item-detail lCol9" data-item="{{data.attributes.damage.value}}">{{data.attributes.damage.value}}</span>
 
     <div class="item-controls lCol8">
-      <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'ALIENRPG.EditItem'}}"><i class="fas fa-edit"></i></a>
-      <!-- <a class="item-control item-delete" title="{{localize "ALIENRPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
+      <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'BABYLON5RPG.EditItem'}}"><i class="fas fa-edit"></i></a>
+      <!-- <a class="item-control item-delete" title="{{localize "BABYLON5RPG.DeleteItem"}}"><i class="fas fa-trash"></i></a> -->
     </div>
   </li>
   {{/each}}

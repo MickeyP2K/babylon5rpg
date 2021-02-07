@@ -8,40 +8,40 @@
   "author": "Michael Power",
   "templateVersion": 1,
   "esmodules": [
-    "module/alienrpg.js"
+    "module/babylon5rpg.js"
   ],
   "styles": [
-    "css/alienrpg.css"
+    "css/babylon5rpg.css"
   ],
   "scripts": [],
   "packs": [
     {
       "name": "tables_gm",
       "label": "Tables (GM)",
-      "path": "packs/AlienRPG-tables_gm.db",
+      "path": "packs/Babylon5RPG-tables_gm.db",
       "entity": "RollTable",
-      "module": "AlienRPG"
+      "module": "Babylon5RPG"
     },
     {
       "name": "mother_instructions",
       "label": "Mother Instructions",
-      "path": "packs/AlienRPG-mother-instructions.db",
+      "path": "packs/Babylon5RPG-mother-instructions.db",
       "entity": "JournalEntry",
-      "module": "AlienRPG"
+      "module": "Babylon5RPG"
     },
     {
-      "name": "alien",
+      "name": "babylon5",
       "label": "Alien",
-      "path": "packs/AlienRPG-alien.db",
+      "path": "packs/Babylon5RPG-babylon5.db",
       "entity": "Macro",
-      "module": "AlienRPG"
+      "module": "Babylon5RPG"
     },
     {
       "name": "skill-stunts",
       "label": "Skill-Stunts",
-      "path": "packs/AlienRPG-skill-stunts.db",
+      "path": "packs/Babylon5RPG-skill-stunts.db",
       "entity": "Item",
-      "module": "AlienRPG"
+      "module": "Babylon5RPG"
     }
   ],
   "languages": [

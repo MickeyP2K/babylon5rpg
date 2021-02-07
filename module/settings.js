@@ -1,13 +1,13 @@
 export default function () {
-  game.settings.register('alienrpg', 'defaultTokenSettings', {
-    name: 'ALIENRPG.DefProto',
-    hint: 'ALIENRPG.DefProtoHint',
+  game.settings.register('babylon5rpg', 'defaultTokenSettings', {
+    name: 'BABYLON5RPG.DefProto',
+    hint: 'BABYLON5RPG.DefProtoHint',
     scope: 'world',
     config: true,
     default: true,
     type: Boolean,
   });
-  game.settings.register('alienrpg', 'systemMigrationVersion', {
+  game.settings.register('babylon5rpg', 'systemMigrationVersion', {
     name: 'System Migration Version',
     scope: 'world',
     config: false,
@@ -15,9 +15,9 @@ export default function () {
     default: 0,
   });
 
-  game.settings.register('alienrpg', 'switchMouseKeys', {
-    name: 'ALIENRPG.SwitchKeys',
-    hint: 'ALIENRPG.SwitchKeysHint',
+  game.settings.register('babylon5rpg', 'switchMouseKeys', {
+    name: 'BABYLON5RPG.SwitchKeys',
+    hint: 'BABYLON5RPG.SwitchKeysHint',
     scope: 'world',
     type: Boolean,
     default: false,

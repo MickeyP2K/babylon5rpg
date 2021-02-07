@@ -15,7 +15,7 @@ export class yze {
    * @param {number} sCount - Count of last number of sucesses to addtothe push reroll
    *
    * rollArr is a globally defined array to store all one'sand sixes and number of dice rolled for each type
-   *   game.alienrpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '' , sCount: 0 };
+   *   game.babylon5rpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '' , sCount: 0 };
    *
    * Call Example:
    * const element = event.currentTarget;
@@ -64,28 +64,28 @@ export class yze {
     // *******************************************************
     let rType = '';
     if (reRoll && (hostile === true) === 'character') {
-      rType = game.i18n.localize('ALIENRPG.Push');
+      rType = game.i18n.localize('BABYLON5RPG.Push');
     } else {
-      rType = game.i18n.localize('ALIENRPG.Rolling');
+      rType = game.i18n.localize('BABYLON5RPG.Rolling');
     }
 
     // *******************************************************
     // Save the sucesses from the last roll
     // *******************************************************
-    let oldRoll = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+    let oldRoll = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
 
     // *******************************************************
     // Clear the global dice array
     // *******************************************************
-    // game.alienrpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '' };
-    game.alienrpg.rollArr.r1Dice = 0;
-    game.alienrpg.rollArr.r1One = 0;
-    game.alienrpg.rollArr.r1Six = 0;
-    game.alienrpg.rollArr.r2Dice = 0;
-    game.alienrpg.rollArr.r2One = 0;
-    game.alienrpg.rollArr.r2Six = 0;
-    game.alienrpg.rollArr.sCount = 0;
-    game.alienrpg.rollArr.tLabel = '';
+    // game.babylon5rpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '' };
+    game.babylon5rpg.rollArr.r1Dice = 0;
+    game.babylon5rpg.rollArr.r1One = 0;
+    game.babylon5rpg.rollArr.r1Six = 0;
+    game.babylon5rpg.rollArr.r2Dice = 0;
+    game.babylon5rpg.rollArr.r2One = 0;
+    game.babylon5rpg.rollArr.r2Six = 0;
+    game.babylon5rpg.rollArr.sCount = 0;
+    game.babylon5rpg.rollArr.tLabel = '';
 
     // *******************************************************
     // Setup the constants for the 3D dice roll V2 method
@@ -96,7 +96,7 @@ export class yze {
     };
 
     if (!r1Dice && !r2Dice) {
-      return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoAttribute'));
+      return ui.notifications.warn(game.i18n.localize('BABYLON5RPG.NoAttribute'));
     }
     // *******************************************************
     // Handle Base Dice Roll
@@ -113,7 +113,7 @@ export class yze {
         if (r2Dice <= 0) {
           console.log('🚀 ~ file: YZEDiceRoller.js ~ line 110 ~ yze ~ yzeRoll ~ roll1', roll1);
           mr = new Roll(`${roll1}`).roll();
-          buildChat(mr, r1Dice, game.i18n.localize('ALIENRPG.Base'));
+          buildChat(mr, r1Dice, game.i18n.localize('BABYLON5RPG.Base'));
           // console.log('yze -> yzeRoll -> mr', mr);
         }
       }
@@ -141,13 +141,13 @@ export class yze {
         }
         mr = new Roll(`${com}`).roll();
         // // console.log('yze -> yzeRoll -> mr', mr);
-        buildChat(mr, r1Dice, game.i18n.localize('ALIENRPG.Stress'));
+        buildChat(mr, r1Dice, game.i18n.localize('BABYLON5RPG.Stress'));
       }
 
       // *******************************************************
       // Set reroll
       // *******************************************************
-      if (game.alienrpg.rollArr.r2One > 0 && !reRoll) {
+      if (game.babylon5rpg.rollArr.r2One > 0 && !reRoll) {
         reRoll = true;
         spud = false;
       }
@@ -156,35 +156,35 @@ export class yze {
       // Display message if there is a 1> on the stress dice.  Display appropriate message if its a Supply roll.
       // *******************************************************
       if (hostile != 'supply') {
-        if (game.alienrpg.rollArr.r2One >= 1) {
-          chatMessage += '<div class="blink"; style="color: red; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.rollStress') + '</div>';
+        if (game.babylon5rpg.rollArr.r2One >= 1) {
+          chatMessage += '<div class="blink"; style="color: red; font-weight: bold; font-size: larger">' + game.i18n.localize('BABYLON5RPG.rollStress') + '</div>';
         } 
-        // else if (game.alienrpg.rollArr.r2One > 1) {
+        // else if (game.babylon5rpg.rollArr.r2One > 1) {
         //   chatMessage +=
         //     '<div class="blink"; style="color: red; font-weight: bold; font-size: larger">' +
-        //     game.i18n.localize('ALIENRPG.rollStress') +
+        //     game.i18n.localize('BABYLON5RPG.rollStress') +
         //     ' ' +
-        //     game.alienrpg.rollArr.r2One +
-        //     game.i18n.localize('ALIENRPG.worstResult') +
+        //     game.babylon5rpg.rollArr.r2One +
+        //     game.i18n.localize('BABYLON5RPG.worstResult') +
         //     '</div>';
         // }
         
-      } else if (game.alienrpg.rollArr.r2One >= 1) {
-        chatMessage += '<div class="blink"; style="color: blue; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.supplyDecreases') + '</div>';
+      } else if (game.babylon5rpg.rollArr.r2One >= 1) {
+        chatMessage += '<div class="blink"; style="color: blue; font-weight: bold; font-size: larger">' + game.i18n.localize('BABYLON5RPG.supplyDecreases') + '</div>';
       }
     }
     // *******************************************************
     // Calulate the total successes and displayas long asit's not a Supply roll.
     // *******************************************************
-    let succEss = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six + game.alienrpg.rollArr.sCount;
+    let succEss = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six + game.babylon5rpg.rollArr.sCount;
 
     if (hostile != 'supply') {
       if (succEss === 1) {
         chatMessage +=
-          '<div style="color: #6868fc; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.youHave') + ' ' + succEss + ' ' + game.i18n.localize('ALIENRPG.sucess') + ' </div>';
+          '<div style="color: #6868fc; font-weight: bold; font-size: larger">' + game.i18n.localize('BABYLON5RPG.youHave') + ' ' + succEss + ' ' + game.i18n.localize('BABYLON5RPG.sucess') + ' </div>';
       } else {
         chatMessage +=
-          '<div style="color: #6868fc; font-weight: bold; font-size: larger">' + game.i18n.localize('ALIENRPG.youHave') + ' ' + succEss + ' ' + game.i18n.localize('ALIENRPG.sucesses') + '</div>';
+          '<div style="color: #6868fc; font-weight: bold; font-size: larger">' + game.i18n.localize('BABYLON5RPG.youHave') + ' ' + succEss + ' ' + game.i18n.localize('BABYLON5RPG.sucesses') + '</div>';
       }
     }
 
@@ -193,28 +193,28 @@ export class yze {
     // *******************************************************
     if (reRoll && spud && hostile === 'character') {
       chatMessage += '<hr>';
-      let sTotal = oldRoll + game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+      let sTotal = oldRoll + game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
       if (sTotal === 1) {
         chatMessage +=
           '<div style="color: #6868fc; font-weight: bold; font-size: larger">' +
-          game.i18n.localize('ALIENRPG.followingPush') +
+          game.i18n.localize('BABYLON5RPG.followingPush') +
           '<br>' +
-          game.i18n.localize('ALIENRPG.totalOf') +
+          game.i18n.localize('BABYLON5RPG.totalOf') +
           ' ' +
           sTotal +
           ' ' +
-          game.i18n.localize('ALIENRPG.sucess') +
+          game.i18n.localize('BABYLON5RPG.sucess') +
           ' </div>';
       } else {
         chatMessage +=
           '<div style="color: #6868fc; font-weight: bold; font-size: larger">' +
-          game.i18n.localize('ALIENRPG.followingPush') +
+          game.i18n.localize('BABYLON5RPG.followingPush') +
           '<br> ' +
-          game.i18n.localize('ALIENRPG.totalOf') +
+          game.i18n.localize('BABYLON5RPG.totalOf') +
           ' ' +
           sTotal +
           ' ' +
-          game.i18n.localize('ALIENRPG.sucesses') +
+          game.i18n.localize('BABYLON5RPG.sucesses') +
           '</div>';
       }
     }
@@ -224,7 +224,7 @@ export class yze {
     // *******************************************************
 
     if (!reRoll) {
-      chatMessage += `<button class="alien-Push-button" title="PUSH Roll?"></button>`;
+      chatMessage += `<button class="babylon5-Push-button" title="PUSH Roll?"></button>`;
       chatMessage += `<span class="dmgBtn-container" style="position:absolute; right:0; bottom:1px;"></span>`;
       chatMessage += `<span class="dmgBtn-container" style="position:absolute; top:0; right:0; bottom:1px;"></span>`;
     }
@@ -294,54 +294,54 @@ export class yze {
         // Foundry v0.6.6 code
         let die = new Die(6);
         die.roll(numDie);
-        game.alienrpg.rollArr[sLot] = numDie;
+        game.babylon5rpg.rollArr[sLot] = numDie;
         die.results.forEach((el) => {
           data.results.push(el);
         });
 
-        game.alienrpg.rollArr.tLabel = label;
+        game.babylon5rpg.rollArr.tLabel = label;
         die.countSuccess(6, '=');
-        game.alienrpg.rollArr[yzeR6] = die.total;
+        game.babylon5rpg.rollArr[yzeR6] = die.total;
         die.countSuccess(1, '=');
-        game.alienrpg.rollArr[yzeR1] = die.total;
+        game.babylon5rpg.rollArr[yzeR1] = die.total;
 
-        let numOf6s = game.alienrpg.rollArr[yzeR6];
-        let numOf1s = game.alienrpg.rollArr[yzeR1];
+        let numOf6s = game.babylon5rpg.rollArr[yzeR6];
+        let numOf1s = game.babylon5rpg.rollArr[yzeR1];
 
         if (sLot === 'r1Dice') {
           chatMessage += '<div>' + col1 + '  ' + r1Dice + ' Dice</div>';
           chatMessage += '<span style="color: green ">  Sixes: </span>';
-          chatMessage += `${game.alienrpg.rollArr[yzeR6]}`;
+          chatMessage += `${game.babylon5rpg.rollArr[yzeR6]}`;
           chatMessage += '<div>';
 
           // added by Steph (for loop, and moved div close)
           for (var _d = 0; _d < numDie; _d++) {
             if (numOf6s > 0) {
-              chatMessage += "<span class='alien-diceface-b6'></span>";
+              chatMessage += "<span class='babylon5-diceface-b6'></span>";
               numOf6s--;
             } else {
-              chatMessage += "<span class='alien-diceface-b0'></span>";
+              chatMessage += "<span class='babylon5-diceface-b0'></span>";
             }
           }
           chatMessage += '</div>';
         } else {
           chatMessage += '<div style="color: goldenrod; font-weight: bold">' + col2 + '  ' + r2Dice + ' Dice</div>';
           chatMessage += '<span style="color: red">Ones: </span>';
-          chatMessage += `<span>${game.alienrpg.rollArr[yzeR1]}</span>`;
+          chatMessage += `<span>${game.babylon5rpg.rollArr[yzeR1]}</span>`;
           chatMessage += '<span style="color: green">  Sixes: </span>';
-          chatMessage += `${game.alienrpg.rollArr[yzeR6]}`;
+          chatMessage += `${game.babylon5rpg.rollArr[yzeR6]}`;
           chatMessage += '<div>';
 
           // added by Steph (for loops, and moved div close)
           for (var _d = 0; _d < numOf6s; _d++) {
-            chatMessage += "<span class='alien-diceface-y6'></span>";
+            chatMessage += "<span class='babylon5-diceface-y6'></span>";
           }
           for (var _d = 0; _d < numOf1s; _d++) {
-            chatMessage += "<span class='alien-diceface-y1'></span>";
+            chatMessage += "<span class='babylon5-diceface-y1'></span>";
           }
           let _theRest = numDie - (numOf6s + numOf1s);
           for (var _d = 0; _d < _theRest; _d++) {
-            chatMessage += "<span class='alien-diceface-y0'></span>";
+            chatMessage += "<span class='babylon5-diceface-y0'></span>";
           }
           chatMessage += '</div>';
         }
@@ -361,7 +361,7 @@ export class yze {
       let RY6 = 0;
       let RY1 = 0;
       let mrterms;
-      game.alienrpg.rollArr.tLabel = label;
+      game.babylon5rpg.rollArr.tLabel = label;
 
       if (dType != 'Stress') {
         for (let index = 0; index < mr.terms[0].results.length; index++) {
@@ -370,9 +370,9 @@ export class yze {
         }
         R6 = numbers.filter(myFunSix);
         R1 = numbers.filter(myFunOne);
-        game.alienrpg.rollArr.r1Dice = numDie;
-        game.alienrpg.rollArr.r1Six = R6.length;
-        game.alienrpg.rollArr.r1One = R1.length;
+        game.babylon5rpg.rollArr.r1Dice = numDie;
+        game.babylon5rpg.rollArr.r1Six = R6.length;
+        game.babylon5rpg.rollArr.r1One = R1.length;
         let numOf6s = R6.length; // added by Steph
         let numOf1s = R1.length; // added by Steph
         chatMessage += '<div style="color: #03cf03">' + col1 + '  ' + r1Dice + ' Dice</div>';
@@ -382,10 +382,10 @@ export class yze {
         // added by Steph (for loop, and moved div close)
         for (var _d = 0; _d < numDie; _d++) {
           if (numOf6s > 0) {
-            chatMessage += "<span class='alien-diceface-b6'></span>";
+            chatMessage += "<span class='babylon5-diceface-b6'></span>";
             numOf6s--;
           } else {
-            chatMessage += "<span class='alien-diceface-b0'></span>";
+            chatMessage += "<span class='babylon5-diceface-b0'></span>";
           }
         }
         chatMessage += '</div>';
@@ -397,9 +397,9 @@ export class yze {
           }
           RB6 = numbers.filter(myFunSix);
           RB1 = numbers.filter(myFunOne);
-          game.alienrpg.rollArr.r1Dice = mr.terms[0].number;
-          game.alienrpg.rollArr.r1Six = RB6.length;
-          game.alienrpg.rollArr.r1One = RB1.length;
+          game.babylon5rpg.rollArr.r1Dice = mr.terms[0].number;
+          game.babylon5rpg.rollArr.r1Six = RB6.length;
+          game.babylon5rpg.rollArr.r1One = RB1.length;
           let numOfB6s = RB6.length; // added by Steph
           let numOfB1s = RB1.length; // added by Steph
           // Base Dice
@@ -410,10 +410,10 @@ export class yze {
           // added by Steph (for loop, and moved div close)
           for (var _d = 0; _d < mr.terms[0].number; _d++) {
             if (numOfB6s > 0) {
-              chatMessage += "<span class='alien-diceface-b6'></span>";
+              chatMessage += "<span class='babylon5-diceface-b6'></span>";
               numOfB6s--;
             } else {
-              chatMessage += "<span class='alien-diceface-b0'></span>";
+              chatMessage += "<span class='babylon5-diceface-b0'></span>";
             }
           }
           chatMessage += '</div>';
@@ -423,7 +423,7 @@ export class yze {
             let spanner = flattenObj(mr.terms[0].results[index]);
             numbers.push(spanner.result);
           }
-          game.alienrpg.rollArr.r2Dice = mr.terms[0].number;
+          game.babylon5rpg.rollArr.r2Dice = mr.terms[0].number;
           mrterms = mr.terms[0].number;
           RY6 = numbers.filter(myFunSix);
           RY1 = numbers.filter(myFunOne);
@@ -432,14 +432,14 @@ export class yze {
             let spanner = flattenObj(mr.terms[2].results[index]);
             numbers2.push(spanner.result);
           }
-          game.alienrpg.rollArr.r2Dice = mr.terms[2].number;
+          game.babylon5rpg.rollArr.r2Dice = mr.terms[2].number;
           mrterms = mr.terms[2].number;
           RY6 = numbers2.filter(myFunSix);
           RY1 = numbers2.filter(myFunOne);
         }
 
-        game.alienrpg.rollArr.r2Six = RY6.length;
-        game.alienrpg.rollArr.r2One = RY1.length;
+        game.babylon5rpg.rollArr.r2Six = RY6.length;
+        game.babylon5rpg.rollArr.r2One = RY1.length;
 
         let numOfY6s = RY6.length; // added by Steph
         let numOfY1s = RY1.length; // added by Steph
@@ -453,14 +453,14 @@ export class yze {
         chatMessage += '<div>';
         // added by Steph (for loops, and moved div close)
         for (var _d = 0; _d < numOfY6s; _d++) {
-          chatMessage += "<span class='alien-diceface-y6'></span>";
+          chatMessage += "<span class='babylon5-diceface-y6'></span>";
         }
         for (var _d = 0; _d < numOfY1s; _d++) {
-          chatMessage += "<span class='alien-diceface-y1'></span>";
+          chatMessage += "<span class='babylon5-diceface-y1'></span>";
         }
         let _theRest = mrterms - (numOfY6s + numOfY1s);
         for (var _d = 0; _d < _theRest; _d++) {
-          chatMessage += "<span class='alien-diceface-y0'></span>";
+          chatMessage += "<span class='babylon5-diceface-y0'></span>";
         }
         chatMessage += '</div>';
       }

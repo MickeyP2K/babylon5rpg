@@ -2,22 +2,22 @@
   <header class="vehicle-header">
     <img class="profile-img-item" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "ALIENRPG.Name"}}" /></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "BABYLON5RPG.Name"}}" /></h1>
 
       <div class="resources grid-weapon">
-        <h3 class="resource-label wItem1">{{localize "ALIENRPG.Weight"}}</h3>
+        <h3 class="resource-label wItem1">{{localize "BABYLON5RPG.Weight"}}</h3>
         <input type="text" name="data.attributes.weight.value" class="maxboxsize wItem2" value="{{data.attributes.weight.value}}" data-dtype="Number" />
 
-        <h3 class="resource-label wItem3">{{localize "ALIENRPG.Class"}}</h3>
+        <h3 class="resource-label wItem3">{{localize "BABYLON5RPG.Class"}}</h3>
         <input type="text" class="wItem4 textbox" name="data.attributes.class.value" value="{{data.attributes.class.value}}" data-dtype="text" />
 
-        <h3 class="wItem6 resource-label">{{localize "ALIENRPG.Type"}}</h3>
+        <h3 class="wItem6 resource-label">{{localize "BABYLON5RPG.Type"}}</h3>
         <div class="selectBox wItem7">
           <select class="select-css" name="data.header.type.value" data-dtype="{{data.header.type.value}}">
             {{#select data.header.type.value}}
             <!-- <option value=""></option> -->
-            <option value="1">{{localize "ALIENRPG.WepTypeRanged"}}</option>
-            <option value="2">{{localize "ALIENRPG.WepTypeMelee"}}</option>
+            <option value="1">{{localize "BABYLON5RPG.WepTypeRanged"}}</option>
+            <option value="2">{{localize "BABYLON5RPG.WepTypeMelee"}}</option>
             {{/select}}
           </select>
         </div>
@@ -27,8 +27,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="attributes">{{localize "ALIENRPG.Attributes"}}</a>
-    <a class="item" data-tab="notes">{{localize "ALIENRPG.Notes"}}</a>
+    <a class="item" data-tab="attributes">{{localize "BABYLON5RPG.Attributes"}}</a>
+    <a class="item" data-tab="notes">{{localize "BABYLON5RPG.Notes"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -36,44 +36,44 @@
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <div class="grid-weapon-body">
-        <label class="resource-label wCol5">{{localize "ALIENRPG.Bonus"}}</label>
+        <label class="resource-label wCol5">{{localize "BABYLON5RPG.Bonus"}}</label>
         <input type="text" class="maxboxsize wCol6" name="data.attributes.bonus.value" value="{{data.attributes.bonus.value}}" data-dtype="Number" />
 
-        <label class="resource-label wCol3">{{localize "ALIENRPG.Damage"}}</label>
+        <label class="resource-label wCol3">{{localize "BABYLON5RPG.Damage"}}</label>
         <input type="text" class="maxboxsize wCol4" name="data.attributes.damage.value" value="{{data.attributes.damage.value}}" data-dtype="Number" />
 
-        <label class="resource-label wCol1">{{localize "ALIENRPG.Cost"}}</label>
+        <label class="resource-label wCol1">{{localize "BABYLON5RPG.Cost"}}</label>
         <input type="text" class="cashboxsize currency wCol2" name="data.attributes.cost.value" value="{{data.attributes.cost.value}}" />
         <br />
-        <!-- <label class="resource-label">{{localize "ALIENRPG.Range"}}</label> -->
+        <!-- <label class="resource-label">{{localize "BABYLON5RPG.Range"}}</label> -->
         <!-- <input type="text" class="textbox" name="data.attributes.range.value" value="{{data.attributes.range.value}}" data-dtype="String" /> -->
         <!-- <div class="grid-two"> -->
-        <label class="resource-label wCol7">{{localize "ALIENRPG.Range"}}</label>
+        <label class="resource-label wCol7">{{localize "BABYLON5RPG.Range"}}</label>
         <select class="select-css wCol8" name="data.attributes.range.value" data-dtype="{{data.attributes.range.value}}">
           {{#ife data.header.type.value '2'}} {{#select data.attributes.range.value}}
-          <option value="1">{{localize "ALIENRPG.Engaged"}}</option>
+          <option value="1">{{localize "BABYLON5RPG.Engaged"}}</option>
           {{/select}} {{/ife}} {{#ife data.header.type.value '1'}} {{#select data.attributes.range.value}}
           <!-- <option value=""></option> -->
-          <option value="1">{{localize "ALIENRPG.Engaged"}}</option>
-          <option value="2">{{localize "ALIENRPG.Short"}}</option>
-          <option value="3">{{localize "ALIENRPG.Medium"}}</option>
-          <option value="4">{{localize "ALIENRPG.Long"}}</option>
-          <option value="5">{{localize "ALIENRPG.Extreme"}}</option>
+          <option value="1">{{localize "BABYLON5RPG.Engaged"}}</option>
+          <option value="2">{{localize "BABYLON5RPG.Short"}}</option>
+          <option value="3">{{localize "BABYLON5RPG.Medium"}}</option>
+          <option value="4">{{localize "BABYLON5RPG.Long"}}</option>
+          <option value="5">{{localize "BABYLON5RPG.Extreme"}}</option>
           {{/select}} {{/ife}}
         </select>
         <!-- </div> -->
 
         {{#ife data.header.type.value '1'}}
-        <label class="resource-label wCol9">{{localize "ALIENRPG.Rounds"}}</label>
+        <label class="resource-label wCol9">{{localize "BABYLON5RPG.Rounds"}}</label>
         <input type="text" class="maxboxsize wCol10" name="data.attributes.rounds.value" value="{{data.attributes.rounds.value}}" data-dtype="Number" />
-        <label class="resource-label wCol11">{{localize "ALIENRPG.Power"}}</label>
+        <label class="resource-label wCol11">{{localize "BABYLON5RPG.Power"}}</label>
         <input type="text" class="maxboxsize wCol12" name="data.attributes.power.value" value="{{data.attributes.power.value}}" data-dtype="Number" />
         {{/ife}} {{#ife data.header.type.value '2'}}
-        <label class="resource-label wCol11">{{localize "ALIENRPG.Power"}}</label>
+        <label class="resource-label wCol11">{{localize "BABYLON5RPG.Power"}}</label>
         <input type="text" class="maxboxsize wCol12" name="data.attributes.power.value" value="{{data.attributes.power.value}}" data-dtype="Number" />
         {{/ife}}
       </div>
-      <h2 class="resource-label">{{localize "ALIENRPG.Comment"}}</h2>
+      <h2 class="resource-label">{{localize "BABYLON5RPG.Comment"}}</h2>
       <textarea name="data.attributes.comment.value" rows="10" data-dtype="String">{{data.attributes.comment.value}}</textarea>
     </div>
     {{!-- Notes Tab --}}

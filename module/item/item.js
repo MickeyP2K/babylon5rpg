@@ -4,7 +4,7 @@ import { yze } from '../YZEDiceRoller.js';
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
  */
-export class alienrpgItem extends Item {
+export class babylon5rpgItem extends Item {
   /**
    * Augment the basic Item data model with additional dynamic data.
    */
@@ -26,7 +26,7 @@ export class alienrpgItem extends Item {
     const item = this.data;
     const actorData = this.actor ? this.actor.data.data : {};
     const itemData = item.data;
-    game.alienrpg.rollArr.sCount = 0;
+    game.babylon5rpg.rollArr.sCount = 0;
     let template = 'systems/babylon5rpg/templates/dialog/roll-all-dialog.html';
     // let roll;
     let r2Data = 0;
@@ -56,17 +56,17 @@ export class alienrpgItem extends Item {
       if (this.actor.data.type === 'character') {
         renderTemplate(template).then((dlg) => {
           new Dialog({
-            title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+            title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
             content: dlg,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
-                label: game.i18n.localize('ALIENRPG.DialRoll'),
+                label: game.i18n.localize('BABYLON5RPG.DialRoll'),
                 callback: () => (confirmed = true),
               },
               two: {
                 icon: '<i class="fas fa-times"></i>',
-                label: game.i18n.localize('ALIENRPG.DialCancel'),
+                label: game.i18n.localize('BABYLON5RPG.DialCancel'),
                 callback: () => (confirmed = false),
               },
             },
@@ -80,13 +80,13 @@ export class alienrpgItem extends Item {
                 if (item.data.header.type.value === '1') {
                   let r1Data = actorData.skills.rangedCbt.mod + itemData.attributes.bonus.value + modifier;
                   r2Data = r2Data + stressMod;
-                  yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                  game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                  yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                  game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                 } else if (item.data.header.type.value === '2') {
                   let r1Data = actorData.skills.closeCbt.mod + itemData.attributes.bonus.value + modifier;
                   r2Data = r2Data + stressMod;
-                  yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                  game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                  yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                  game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                 } else {
                   console.warn('No type on item');
                 }
@@ -99,17 +99,17 @@ export class alienrpgItem extends Item {
         template = 'systems/babylon5rpg/templates/dialog/roll-base-dialog.html';
         renderTemplate(template).then((dlg) => {
           new Dialog({
-            title: game.i18n.localize('ALIENRPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('ALIENRPG.DialTitle2'),
+            title: game.i18n.localize('BABYLON5RPG.DialTitle1') + ' ' + label + ' ' + game.i18n.localize('BABYLON5RPG.DialTitle2'),
             content: dlg,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
-                label: game.i18n.localize('ALIENRPG.DialRoll'),
+                label: game.i18n.localize('BABYLON5RPG.DialRoll'),
                 callback: () => (confirmed = true),
               },
               two: {
                 icon: '<i class="fas fa-times"></i>',
-                label: game.i18n.localize('ALIENRPG.DialCancel'),
+                label: game.i18n.localize('BABYLON5RPG.DialCancel'),
                 callback: () => (confirmed = false),
               },
             },
@@ -124,13 +124,13 @@ export class alienrpgItem extends Item {
                   if (item.data.header.type.value === '1') {
                     let r1Data = actorData.skills.rangedCbt.mod + itemData.attributes.bonus.value + modifier;
                     r2Data = r2Data + stressMod;
-                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                    game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                    game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                   } else if (item.data.header.type.value === '2') {
                     let r1Data = actorData.skills.closeCbt.mod + itemData.attributes.bonus.value + modifier;
                     r2Data = r2Data + stressMod;
-                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                    game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                    game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                   } else {
                     console.warn('No type on item');
                   }
@@ -140,13 +140,13 @@ export class alienrpgItem extends Item {
                   if (item.data.header.type.value === '1') {
                     let r1Data = itemData.attributes.bonus.value + modifier;
                     r2Data = r2Data + stressMod;
-                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                    game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                    game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                   } else if (item.data.header.type.value === '2') {
                     let r1Data = itemData.attributes.bonus.value + modifier;
                     r2Data = r2Data + stressMod;
-                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-                    game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+                    yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+                    game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
                   } else {
                     console.warn('No type on item');
                   }
@@ -165,12 +165,12 @@ export class alienrpgItem extends Item {
         // it's not a vehicle so add the correct attribute bonus
         if (item.data.header.type.value === '1') {
           let r1Data = actorData.skills.rangedCbt.mod + itemData.attributes.bonus.value;
-          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-          game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+          game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
         } else if (item.data.header.type.value === '2') {
           let r1Data = actorData.skills.closeCbt.mod + itemData.attributes.bonus.value;
-          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-          game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+          game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
         } else {
           console.warn('No type on item');
         }
@@ -179,12 +179,12 @@ export class alienrpgItem extends Item {
 
         if (item.data.header.type.value === '1') {
           let r1Data = itemData.attributes.bonus.value;
-          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-          game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+          game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
         } else if (item.data.header.type.value === '2') {
           let r1Data = itemData.attributes.bonus.value;
-          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('ALIENRPG.Black'), r2Data, game.i18n.localize('ALIENRPG.Yellow'));
-          game.alienrpg.rollArr.sCount = game.alienrpg.rollArr.r1Six + game.alienrpg.rollArr.r2Six;
+          yze.yzeRoll(hostile, blind, reRoll, label, r1Data, game.i18n.localize('BABYLON5RPG.Black'), r2Data, game.i18n.localize('BABYLON5RPG.Yellow'));
+          game.babylon5rpg.rollArr.sCount = game.babylon5rpg.rollArr.r1Six + game.babylon5rpg.rollArr.r2Six;
         } else {
           console.warn('No type on item');
         }

@@ -4,7 +4,7 @@ import { yze } from '../YZEDiceRoller.js';
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetAlienRPGTerritory extends ActorSheet {
+export class ActorSheetBabylon5RPGTerritory extends ActorSheet {
   constructor(...args) {
     super(...args);
 
@@ -22,7 +22,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'territory'],
+      classes: ['babylon5rpg', 'sheet', 'actor', 'territory'],
       // template: 'systems/babylon5rpg/templates/actor/vehicles-sheet.html',
       width: 650,
       height: 650,
@@ -52,7 +52,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
       isVehicles: this.entity.data.type === 'vehicles',
       isCreature: this.entity.data.type === 'creature',
 
-      config: CONFIG.ALIENRPG,
+      config: CONFIG.BABYLON5RPG,
     };
 
     // The Actor and its Items
@@ -96,7 +96,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
 
     const itemContextMenu = [
       {
-        name: game.i18n.localize('ALIENRPG.EditItem'),
+        name: game.i18n.localize('BABYLON5RPG.EditItem'),
         icon: '<i class="fas fa-edit"></i>',
         callback: (element) => {
           const item = this.actor.getOwnedItem(element.data('item-id'));
@@ -104,7 +104,7 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
         },
       },
       {
-        name: game.i18n.localize('ALIENRPG.DeleteItem'),
+        name: game.i18n.localize('BABYLON5RPG.DeleteItem'),
         icon: '<i class="fas fa-trash"></i>',
         callback: (element) => {
           this.actor.deleteOwnedItem(element.data('item-id'));
@@ -191,4 +191,4 @@ export class ActorSheetAlienRPGTerritory extends ActorSheet {
     data.systems = systems;
   }
 }
-export default ActorSheetAlienRPGTerritory;
+export default ActorSheetBabylon5RPGTerritory;

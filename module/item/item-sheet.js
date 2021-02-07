@@ -2,11 +2,11 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class alienrpgItemSheet extends ItemSheet {
+export class babylon5rpgItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'item', 'item-sheet'],
+      classes: ['babylon5rpg', 'sheet', 'item', 'item-sheet'],
       width: 675,
       height: 458,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'general' }],

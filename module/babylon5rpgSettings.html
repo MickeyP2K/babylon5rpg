@@ -1,0 +1,47 @@
+<form autocomplete="off">
+  <div class="tab active">
+    <!-- <div id="babylon5prgSettings"></div> -->
+
+    <div class="form-group">
+      <label>{{localize "BABYLON5RPG.FontStyle"}}</label>
+      <select name="fontStyle" id="fontStyle">
+        <option value="Wallpoet">{{localize "BABYLON5RPG.Wallpoet"}}</option>
+        <option value="Roboto-Regular">{{localize "BABYLON5RPG.Roboto-Regular"}}</option>
+        <option value="Sansita Swashed">{{localize "BABYLON5RPG.SansitaSwashed"}}</option>
+        <option value="Changa">{{localize "BABYLON5RPG.Changa"}}</option>
+        <option value="Arial">{{localize "BABYLON5RPG.Arial"}}</option>
+        <option value="Arial Narrow">{{localize "BABYLON5RPG.Arial Narrow"}}</option>
+        <option value="Calibri">{{localize "BABYLON5RPG.Calibri"}}</option>
+        <option value="Candara">{{localize "BABYLON5RPG.Candara"}}</option>
+        <option value="Consolas">{{localize "BABYLON5RPG.Consolas"}}</option>
+        <option value="Constantia">{{localize "BABYLON5RPG.Constantia"}}</option>
+        <option value="Corbel">{{localize "BABYLON5RPG.Corbel"}}</option>
+        <option value="Courier">{{localize "BABYLON5RPG.Courier"}}</option>
+        <option value="Lucida Console">{{localize "BABYLON5RPG.Lucida Console"}}</option>
+        <option value="Lucida Sans Unicode">{{localize "BABYLON5RPG.Lucida Sans Unicode"}}</option>
+        <option value="MS Gothic">{{localize "BABYLON5RPG.MS Gothic"}}</option>
+        <option value="Microsoft Sans Serif">{{localize "BABYLON5RPG.Microsoft Sans Serif"}}</option>
+        <option value="Tahoma">{{localize "BABYLON5RPG.Tahoma"}}</option>
+        <option value="Times New Roman">{{localize "BABYLON5RPG.Times New Roman"}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>{{localize "BABYLON5RPG.Colpick"}}</label>
+      <div class="form-fields">
+        <input type="text" name="fontColour" value="{{fontColour}}" data-dtype="String" />
+        <input type="color" name="fontColourSelector" value="{{fontColour}}" data-edit="fontColour" />
+      </div>
+    </div>
+  </div>
+
+  <p><i style="font-size: smaller">{{localize "BABYLON5RPG.ResetNote"}}</i></p>
+
+  <div class="form-group buttons-save">
+    <!-- <button type="submit" name="submit"><i class="fas fa-save"></i> {{localize "BABYLON5RPG.SubmitButton"}}</button>
+    <button type="button" name="reset"><i class="fas fa-refresh"></i> Reset</button> -->
+    <button type="submit" name="submit"><i class="fas fa-save"></i> <i style="font-size: smaller">{{localize "BABYLON5RPG.InThePipe"}}</i> <br /><b>{{localize "BABYLON5RPG.SubmitButton"}}</b></button>
+    <button type="button" name="reset"><i class="fas fa-refresh"></i><i style="font-size: smaller">{{localize "BABYLON5RPG.GameOver"}}</i> <br /><b>{{localize "BABYLON5RPG.ResetButton"}}</b></button>
+  </div>
+  <!--  {{log @root}} -->
+</form>

@@ -2,17 +2,17 @@
   <header class="vehicle-header">
     <img class="profile-img-item" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'ALIENRPG.Suit'}}" /></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BABYLON5RPG.Suit'}}" /></h1>
 
       <div class="resources grid-weapon">
-        <h3 class="resource-label wItem1">{{localize "ALIENRPG.Weight"}}</h3>
+        <h3 class="resource-label wItem1">{{localize "BABYLON5RPG.Weight"}}</h3>
         <input type="text" name="data.attributes.weight.value" class="maxboxsize wItem2" value="{{data.attributes.weight.value}}" data-dtype="Number" />
-        <h3 class="resource-label wItem3">{{localize "ALIENRPG.Cost"}}</h3>
+        <h3 class="resource-label wItem3">{{localize "BABYLON5RPG.Cost"}}</h3>
         <input type="text" class="cashboxsize currency wItem4" name="data.attributes.cost.value" value="{{data.attributes.cost.value}}" />
-        <h3 class="resource-label wItem5">{{localize "ALIENRPG.ArmorRating"}}</h3>
+        <h3 class="resource-label wItem5">{{localize "BABYLON5RPG.ArmorRating"}}</h3>
         <input type="text" class="wItem6 maxboxsize" name="data.attributes.armorrating.value" value="{{data.attributes.armorrating.value}}" data-dtype="text" />
         <div class="wItem7">
-          <label class="resource-label" style="font-size: medium">{{localize "ALIENRPG.AirSupply"}}</label>
+          <label class="resource-label" style="font-size: medium">{{localize "BABYLON5RPG.AirSupply"}}</label>
           <input type="text" class="maxboxsize" name="data.attributes.airsupply.value" value="{{data.attributes.airsupply.value}}" data-dtype="Number" />
         </div>
       </div>
@@ -21,21 +21,21 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="attributes">{{localize "ALIENRPG.Attributes"}}</a>
-    <a class="item" data-tab="notes">{{localize "ALIENRPG.Notes"}}</a>
-    <a class="item" data-tab="modifiers">{{localize "ALIENRPG.Modifiers"}}</a>
+    <a class="item" data-tab="attributes">{{localize "BABYLON5RPG.Attributes"}}</a>
+    <a class="item" data-tab="notes">{{localize "BABYLON5RPG.Notes"}}</a>
+    <a class="item" data-tab="modifiers">{{localize "BABYLON5RPG.Modifiers"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <h2 class="resource-label">{{localize "ALIENRPG.Comment"}}</h2>
+      <h2 class="resource-label">{{localize "BABYLON5RPG.Comment"}}</h2>
       <textarea name="data.attributes.comment.value" rows="10" data-dtype="String">{{data.attributes.comment.value}}</textarea>
     </div>
 
     <div class="tab modifiers" data-group="primary" data-tab="modifiers">
-      <h2 class="resource-label">{{localize "ALIENRPG.Attributes"}}</h2>
+      <h2 class="resource-label">{{localize "BABYLON5RPG.Attributes"}}</h2>
       <div class="grid-2col">
         {{#each data.modifiers as |attributes key|}}
         <div class="modifiers flexrow flex-group-center">

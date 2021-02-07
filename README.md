@@ -6,7 +6,7 @@ An UNOFFICIAL system for playing Babylon 5 on Foundry VTT.
 
 My intention is to enable people to play Babylon 5 RPG using what I beleive to be a far superior game system for this setting. 
 
-To fully use this game system you will need to purchase a copy of the Aliens RPG rules from Free League Publishing: https://frialigan.se/en/games/alien/
+To fully use this game system you will need to purchase a copy of the Aliens RPG rules from Free League Publishing: https://frialigan.se/en/games/babylon5/
 
 ### System Version
 
@@ -30,7 +30,7 @@ Tested with the following virtual table top platforms:
 
 Thanks to:
 
-- @pwatson100 for making the Alien RPG system upon which this is based https://github.com/pwatson100/alienrpg
+- @pwatson100 for making the Alien RPG system upon which this is based https://github.com/pwatson100/babylon5rpg
 
 
 ### Feedback

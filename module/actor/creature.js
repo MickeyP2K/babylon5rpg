@@ -1,11 +1,11 @@
 import { yze } from '../YZEDiceRoller.js';
-import { alienrpgrTableGet } from './rollTableData.js';
+import { babylon5rpgrTableGet } from './rollTableData.js';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetAlienRPGCreat extends ActorSheet {
+export class ActorSheetBabylon5RPGCreat extends ActorSheet {
   constructor(...args) {
     super(...args);
     /**
@@ -20,7 +20,7 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['alienrpg', 'sheet', 'actor', 'creature-sheet'],
+      classes: ['babylon5rpg', 'sheet', 'actor', 'creature-sheet'],
       // template: 'systems/babylon5rpg/templates/actor/creature-sheet.html',
       width: 660,
       height: 630,
@@ -50,7 +50,7 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
       isVehicles: this.entity.data.type === 'vehicles',
       isCreature: this.entity.data.type === 'creature',
       // isNPC: this.entity.data.type === 'creature',
-      config: CONFIG.ALIENRPG,
+      config: CONFIG.BABYLON5RPG,
     };
 
     // The Actor and its Items
@@ -64,10 +64,10 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
     data.labels = this.actor.labels || {};
     data.filters = this._filters;
 
-    data.rTables = alienrpgrTableGet.rTableget();
+    data.rTables = babylon5rpgrTableGet.rTableget();
 
     for (let [a, abl] of Object.entries(data.actor.data.general)) {
-      abl.label = CONFIG.ALIENRPG.general[a];
+      abl.label = CONFIG.BABYLON5RPG.general[a];
     }
 
     return data;
@@ -91,7 +91,7 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
-    if (game.settings.get('alienrpg', 'switchMouseKeys')) {
+    if (game.settings.get('babylon5rpg', 'switchMouseKeys')) {
       // Right to Roll and left to mod
       // Rollable abilities.
       html.find('.rollable').contextmenu(this._onRoll.bind(this));
@@ -155,4 +155,4 @@ export class ActorSheetAlienRPGCreat extends ActorSheet {
     this.actor.creatureAttackRoll(this.actor, dataset);
   }
 }
-export default ActorSheetAlienRPGCreat;
+export default ActorSheetBabylon5RPGCreat;

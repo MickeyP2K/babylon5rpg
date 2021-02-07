@@ -1,33 +1,33 @@
 // Namespace Alien Configuration Values
-export const ALIENRPG = {};
+export const BABYLON5RPG = {};
 
 /**
  * The set of ability scores used with the system
  * @type {Object}
  */
-ALIENRPG.attributes = {
-  str: 'ALIENRPG.AbilityStr',
-  wit: 'ALIENRPG.AbilityWit',
-  agl: 'ALIENRPG.AbilityAgl',
-  emp: 'ALIENRPG.AbilityEmp',
+BABYLON5RPG.attributes = {
+  str: 'BABYLON5RPG.AbilityStr',
+  wit: 'BABYLON5RPG.AbilityWit',
+  agl: 'BABYLON5RPG.AbilityAgl',
+  emp: 'BABYLON5RPG.AbilityEmp',
 };
-ALIENRPG.skills = {
-  heavyMach: 'ALIENRPG.SkillHeavyMach',
-  closeCbt: 'ALIENRPG.SkillCloseCbt',
-  stamina: 'ALIENRPG.SkillStamina',
-  rangedCbt: 'ALIENRPG.SkillRangedCbt',
-  mobility: 'ALIENRPG.SkillMobility',
-  piloting: 'ALIENRPG.SkillPiloting',
-  command: 'ALIENRPG.SkillCommand',
-  manipulation: 'ALIENRPG.SkillManipulation',
-  medicalAid: 'ALIENRPG.SkillMedicalAid',
-  observation: 'ALIENRPG.SkillObservation',
-  science: 'ALIENRPG.SkillScience',
-  survival: 'ALIENRPG.SkillSurvival',
-  comtech: 'ALIENRPG.SkillComtech',
+BABYLON5RPG.skills = {
+  heavyMach: 'BABYLON5RPG.SkillHeavyMach',
+  closeCbt: 'BABYLON5RPG.SkillCloseCbt',
+  stamina: 'BABYLON5RPG.SkillStamina',
+  rangedCbt: 'BABYLON5RPG.SkillRangedCbt',
+  mobility: 'BABYLON5RPG.SkillMobility',
+  piloting: 'BABYLON5RPG.SkillPiloting',
+  command: 'BABYLON5RPG.SkillCommand',
+  manipulation: 'BABYLON5RPG.SkillManipulation',
+  medicalAid: 'BABYLON5RPG.SkillMedicalAid',
+  observation: 'BABYLON5RPG.SkillObservation',
+  science: 'BABYLON5RPG.SkillScience',
+  survival: 'BABYLON5RPG.SkillSurvival',
+  comtech: 'BABYLON5RPG.SkillComtech',
 };
-ALIENRPG.general = {
-  career: 'ALIENRPG.Career',
-  appearance: 'ALIENRPG.Apparance',
-  sigItem: 'ALIENRPG.SignatureItem',
+BABYLON5RPG.general = {
+  career: 'BABYLON5RPG.Career',
+  appearance: 'BABYLON5RPG.Apparance',
+  sigItem: 'BABYLON5RPG.SignatureItem',
 };

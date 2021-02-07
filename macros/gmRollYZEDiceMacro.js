@@ -31,7 +31,7 @@
         const r2Data = parseInt(html.find('#fr2Data')[0].value || 0);
         const blind = html.find('#fblind')[0].checked;
 
-        await game.alienrpg.yze.yzeRoll(hostile, blind, reRoll, label, r1Data, 'Black', r2Data, 'Stress');
+        await game.babylon5rpg.yze.yzeRoll(hostile, blind, reRoll, label, r1Data, 'Black', r2Data, 'Stress');
       },
     },
     cancel: {

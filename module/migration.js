@@ -3,7 +3,7 @@
  * @return {Promise}      A Promise which resolves once the migration is completed
  */
 export const migrateWorld = async function () {
-  ui.notifications.info(`Applying AlienRPG System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, { permanent: true });
+  ui.notifications.info(`Applying Babylon5RPG System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, { permanent: true });
 
   // Migrate World Actors
   for (let a of game.actors.entities) {
@@ -57,7 +57,7 @@ export const migrateWorld = async function () {
 
   // // Migrate Base Rules Compendium Packs
   // const bRpacks = game.packs.filter((cp) => {
-  //   return cp.metadata.package === 'AlienRPG-CoreRules' && ['Actor', 'Item'].includes(cp.metadata.entity);
+  //   return cp.metadata.package === 'Babylon5RPG-CoreRules' && ['Actor', 'Item'].includes(cp.metadata.entity);
   // });
   // for (let cp of bRpacks) {
   //   await migrateCompendium(cp);
@@ -65,15 +65,15 @@ export const migrateWorld = async function () {
 
   // // Migrate Chariot of the Gods Compendium Packs
   // const cGpacks = game.packs.filter((cg) => {
-  //   return cg.metadata.package === 'AlienRPG-ChariotOfTheGods' && ['Actor', 'Item'].includes(cg.metadata.entity);
+  //   return cg.metadata.package === 'Babylon5RPG-ChariotOfTheGods' && ['Actor', 'Item'].includes(cg.metadata.entity);
   // });
   // for (let cg of cGpacks) {
   //   await migrateCompendium(cg);
   // }
 
   // Set the migration as complete
-  game.settings.set('alienrpg', 'systemMigrationVersion', game.system.data.version);
-  ui.notifications.info(`AlienRPG System Migration to version ${game.system.data.version} completed!`, { permanent: true });
+  game.settings.set('babylon5rpg', 'systemMigrationVersion', game.system.data.version);
+  ui.notifications.info(`Babylon5RPG System Migration to version ${game.system.data.version} completed!`, { permanent: true });
 };
 
 /* -------------------------------------------- */
@@ -269,12 +269,12 @@ function cleanActorData(actorData) {
   actorData.data = filterObject(actorData.data, model);
 
   // Scrub system flags
-  const allowedFlags = CONFIG.ALIENRPG.allowedActorFlags.reduce((obj, f) => {
+  const allowedFlags = CONFIG.BABYLON5RPG.allowedActorFlags.reduce((obj, f) => {
     obj[f] = null;
     return obj;
   }, {});
-  if (actorData.flags.alienrpg) {
-    actorData.flags.alienrpg = filterObject(actorData.flags.alienrpg, allowedFlags);
+  if (actorData.flags.babylon5rpg) {
+    actorData.flags.babylon5rpg = filterObject(actorData.flags.babylon5rpg, allowedFlags);
   }
 
   // Return the scrubbed data

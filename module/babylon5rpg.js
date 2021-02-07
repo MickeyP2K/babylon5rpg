@@ -1,28 +1,28 @@
 // Import Modules
 import registerActors from './register-actors.js';
-import { alienrpgActor } from './actor/actor.js';
-// import { alienrpgActorSheet } from './actor/actor-sheet.js';
-import { alienrpgItem } from './item/item.js';
-import { alienrpgItemSheet } from './item/item-sheet.js';
-import { alienrpgPlanetSheet } from './item/planet-system-sheet.js';
+import { babylon5rpgActor } from './actor/actor.js';
+// import { babylon5rpgActorSheet } from './actor/actor-sheet.js';
+import { babylon5rpgItem } from './item/item.js';
+import { babylon5rpgItemSheet } from './item/item-sheet.js';
+import { babylon5rpgPlanetSheet } from './item/planet-system-sheet.js';
 import { yze } from './YZEDiceRoller.js';
-import { ALIENRPG } from './config.js';
+import { BABYLON5RPG } from './config.js';
 import registerSettings from './settings.js';
-import { AlienRPGSetup } from './setupHandler.js';
+import { Babylon5RPGSetup } from './setupHandler.js';
 import { preloadHandlebarsTemplates } from './templates.js';
-import { AlienRPGBaseDie } from './alienRPGBaseDice.js';
-import { AlienRPGStressDie } from './alienRPGBaseDice.js';
+import { Babylon5RPGBaseDie } from './BABYLON5RPGBaseDice.js';
+import { Babylon5RPGStressDie } from './BABYLON5RPGBaseDice.js';
 import * as migrations from './migration.js';
-import { AlienConfig } from './alienRPGConfig.js';
+import { Babylon5Config } from './BABYLON5RPGConfig.js';
 
 Hooks.once('init', async function () {
   console.warn(`Initializing Alien RPG`);
-  game.alienrpg = {
-    alienrpgActor,
-    alienrpgItem,
-    alienrpgPlanetSheet,
+  game.babylon5rpg = {
+    babylon5rpgActor,
+    babylon5rpgItem,
+    babylon5rpgPlanetSheet,
     yze,
-    AlienConfig,
+    Babylon5Config,
     rollItemMacro,
     registerSettings,
   };
@@ -31,8 +31,8 @@ Hooks.once('init', async function () {
   const is07x = game.data.version.split('.')[1] === '7';
 
   // Global define for this so the roll data can be read by the reroll method.
-  game.alienrpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '', sCount: 0 };
-  // console.warn('sCount init', game.alienrpg.rollArr.sCount);
+  game.babylon5rpg.rollArr = { r1Dice: 0, r1One: 0, r1Six: 0, r2Dice: 0, r2One: 0, r2Six: 0, tLabel: '', sCount: 0 };
+  // console.warn('sCount init', game.babylon5rpg.rollArr.sCount);
 
   /**
    * Set an initiative formula for the system
@@ -44,20 +44,20 @@ Hooks.once('init', async function () {
   };
   // If the FVTT version is > V0.7.x initalise the Base and Stress dice terms
   if (is07x) {
-    CONFIG.Dice.terms['b'] = AlienRPGBaseDie;
-    CONFIG.Dice.terms['s'] = AlienRPGStressDie;
+    CONFIG.Dice.terms['b'] = Babylon5RPGBaseDie;
+    CONFIG.Dice.terms['s'] = Babylon5RPGStressDie;
   }
 
   // Define custom Entity classes
-  CONFIG.ALIENRPG = ALIENRPG;
-  CONFIG.Actor.entityClass = alienrpgActor;
-  CONFIG.Item.entityClass = alienrpgItem;
-  // CONFIG.Planet.entityClass = alienrpgPlanet;
+  CONFIG.BABYLON5RPG = BABYLON5RPG;
+  CONFIG.Actor.entityClass = babylon5rpgActor;
+  CONFIG.Item.entityClass = babylon5rpgItem;
+  // CONFIG.Planet.entityClass = babylon5rpgPlanet;
 
   // Register sheet application classes
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('alienrpg', alienrpgItemSheet, { types: ['item', 'weapon', 'armor', 'talent', 'skill-stunts',"agenda"], makeDefault: false });
-  Items.registerSheet('alienrpg', alienrpgPlanetSheet, { types: ['planet-system'], makeDefault: false });
+  Items.registerSheet('babylon5rpg', babylon5rpgItemSheet, { types: ['item', 'weapon', 'armor', 'talent', 'skill-stunts',"agenda"], makeDefault: false });
+  Items.registerSheet('babylon5rpg', babylon5rpgPlanetSheet, { types: ['planet-system'], makeDefault: false });
   registerSettings();
   registerActors();
 
@@ -104,19 +104,19 @@ Hooks.once('init', async function () {
   });
 
   // Register system settings
-  game.settings.register('alienrpg', 'macroShorthand', {
-    name: 'ALIENRPG.DefMacro',
-    hint: 'ALIENRPG.DefMacroHint',
+  game.settings.register('babylon5rpg', 'macroShorthand', {
+    name: 'BABYLON5RPG.DefMacro',
+    hint: 'BABYLON5RPG.DefMacroHint',
     scope: 'world',
     type: Boolean,
     default: true,
     config: true,
   });
 
-  game.settings.register('alienrpg', 'fontColour', {
-    name: 'ALIENRPG.Fontpick',
-    label: 'ALIENRPG.Colpick',
-    hint: 'ALIENRPG.ColpickHint',
+  game.settings.register('babylon5rpg', 'fontColour', {
+    name: 'BABYLON5RPG.Fontpick',
+    label: 'BABYLON5RPG.Colpick',
+    hint: 'BABYLON5RPG.ColpickHint',
     icon: 'fas fa-dice-d20',
     restricted: false,
     type: String,
@@ -127,10 +127,10 @@ Hooks.once('init', async function () {
       location.reload();
     },
   });
-  game.settings.register('alienrpg', 'fontStyle', {
-    name: 'ALIENRPG.FontStyle',
-    label: 'ALIENRPG.StylePicker',
-    hint: 'ALIENRPG.StylePickerHint',
+  game.settings.register('babylon5rpg', 'fontStyle', {
+    name: 'BABYLON5RPG.FontStyle',
+    label: 'BABYLON5RPG.StylePicker',
+    hint: 'BABYLON5RPG.StylePickerHint',
     icon: 'fas fa-cogs',
     restricted: false,
     scope: 'client',
@@ -140,35 +140,35 @@ Hooks.once('init', async function () {
       location.reload();
     },
   });
-  game.settings.registerMenu('alienrpg', 'alienrpgSettings', {
-    name: 'ALIENRPG.MenuName',
-    label: 'ALIENRPG.MenuLabel',
-    hint: 'ALIENRPG.MenuHint',
+  game.settings.registerMenu('babylon5rpg', 'babylon5rpgSettings', {
+    name: 'BABYLON5RPG.MenuName',
+    label: 'BABYLON5RPG.MenuLabel',
+    hint: 'BABYLON5RPG.MenuHint',
     icon: 'fas fa-palette',
-    type: AlienConfig,
+    type: Babylon5Config,
     restricted: false,
   });
 
   // register setting for add/remove menu button
-  game.settings.register('alienrpg', 'addMenuButton', {
-    name: 'ALIENRPG.AddMenuName',
-    hint: 'ALIENRPG.AddMenuHint',
+  game.settings.register('babylon5rpg', 'addMenuButton', {
+    name: 'BABYLON5RPG.AddMenuName',
+    hint: 'BABYLON5RPG.AddMenuHint',
     scope: 'world',
     config: true,
-    default: AlienConfig.getDefaults.addMenuButton,
+    default: Babylon5Config.getDefaults.addMenuButton,
     type: Boolean,
     onChange: (enabled) => {
-      AlienConfig.toggleConfigButton(enabled);
+      Babylon5Config.toggleConfigButton(enabled);
     },
   });
 });
 
 // Build the panic table if it does not exist.
 Hooks.once('ready', async () => {
-  await AlienRPGSetup.setup();
+  await Babylon5RPGSetup.setup();
 
   // Determine whether a system migration is required and feasible
-  const currentVersion = game.settings.get('alienrpg', 'systemMigrationVersion');
+  const currentVersion = game.settings.get('babylon5rpg', 'systemMigrationVersion');
   const NEEDS_MIGRATION_VERSION = '1.2.12';
   const COMPATIBLE_MIGRATION_VERSION = '0' || isNaN('NaN');
   let needMigration = currentVersion < NEEDS_MIGRATION_VERSION || currentVersion === null;
@@ -177,7 +177,7 @@ Hooks.once('ready', async () => {
   if (needMigration && game.user.isGM) {
     if (currentVersion && currentVersion < COMPATIBLE_MIGRATION_VERSION) {
       ui.notifications.error(
-        `Your AlienRPG system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`,
+        `Your Babylon5RPG system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`,
         { permanent: true }
       );
     }
@@ -198,14 +198,14 @@ Hooks.once('ready', async function () {
 
 // create/remove the quick access config button
 Hooks.once('renderSettings', () => {
-  AlienConfig.toggleConfigButton(JSON.parse(game.settings.get('alienrpg', 'addMenuButton')));
+  Babylon5Config.toggleConfigButton(JSON.parse(game.settings.get('babylon5rpg', 'addMenuButton')));
 });
 
 Hooks.once('ready', () => {
-  // game.settings.get('alienrpg', 'fontColour');
+  // game.settings.get('babylon5rpg', 'fontColour');
   var r = document.querySelector(':root');
-  r.style.setProperty('--babylon5borders', game.settings.get('alienrpg', 'fontColour'));
-  r.style.setProperty('--alienfont', game.settings.get('alienrpg', 'fontStyle'));
+  r.style.setProperty('--babylon5borders', game.settings.get('babylon5rpg', 'fontColour'));
+  r.style.setProperty('--babylon5font', game.settings.get('babylon5rpg', 'fontStyle'));
 });
 
 // ***************************
@@ -224,7 +224,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     texture: 'none',
   });
 
-  dice3d.addSystem({ id: 'alienrpg', name: 'Alien RPG - Blank' }, 'exclusive');
+  dice3d.addSystem({ id: 'babylon5rpg', name: 'Alien RPG - Blank' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [
@@ -236,7 +236,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
       'systems/babylon5rpg/ui/DsN/b6.png',
     ],
     colorset: 'black',
-    system: 'alienrpg',
+    system: 'babylon5rpg',
   });
   dice3d.addDicePreset({
     type: 'ds',
@@ -249,10 +249,10 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
       'systems/babylon5rpg/ui/DsN/y6.png',
     ],
     colorset: 'yellow',
-    system: 'alienrpg',
+    system: 'babylon5rpg',
   });
 
-  dice3d.addSystem({ id: 'alienrpgf', name: 'Alien RPG - Full Dice' }, 'exclusive');
+  dice3d.addSystem({ id: 'babylon5rpgf', name: 'Alien RPG - Full Dice' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [
@@ -264,7 +264,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
       'systems/babylon5rpg/ui/DsN/b6.png',
     ],
     colorset: 'black',
-    system: 'alienrpgf',
+    system: 'babylon5rpgf',
   });
   dice3d.addDicePreset({
     type: 'ds',
@@ -277,14 +277,14 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
       'systems/babylon5rpg/ui/DsN/y6.png',
     ],
     colorset: 'yellow',
-    system: 'alienrpgf',
+    system: 'babylon5rpgf',
   });
 });
 
 // Item Drag Hook
 Hooks.once('ready', async function () {
   // Wait to register the Hotbar drop hook on ready sothat modulescould register earlier if theywant to
-  Hooks.on('hotbarDrop', (bar, data, slot) => createAlienrpgMacro(data, slot));
+  Hooks.on('hotbarDrop', (bar, data, slot) => createBABYLON5RPGMacro(data, slot));
 });
 
 //  Hook to watch for the Push button being pressed -   Need to refactor this so it does not fire all the time.
@@ -292,14 +292,14 @@ Hooks.once('ready', async function () {
 Hooks.on('renderChatMessage', (message, html, data) => {
   // console.warn('init hook here');
 
-  html.find('button.alien-Push-button').each((i, li) => {
+  html.find('button.babylon5-Push-button').each((i, li) => {
     // console.warn(li);
     li.addEventListener('click', function (ev) {
       // console.warn(ev);
-      if (ev.target.classList.contains('alien-Push-button')) {
+      if (ev.target.classList.contains('babylon5-Push-button')) {
         // do stuff
         let actor = game.actors.get(ChatMessage.getSpeaker().actor);
-        if (!actor) return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoToken'));
+        if (!actor) return ui.notifications.warn(game.i18n.localize('BABYLON5RPG.NoToken'));
         let token = game.actors.get(ChatMessage.getSpeaker().token);
         let reRoll = true;
         let hostile = actor.data.type;
@@ -313,9 +313,9 @@ Hooks.on('renderChatMessage', (message, html, data) => {
         if (actor.data.type != 'creature') {
           actor.update({ 'data.header.stress.value': actor.data.data.header.stress.value + 1 });
         }
-        const reRoll1 = game.alienrpg.rollArr.r1Dice - game.alienrpg.rollArr.r1Six;
-        const reRoll2 = game.alienrpg.rollArr.r2Dice + 1 - (game.alienrpg.rollArr.r2One + game.alienrpg.rollArr.r2Six);
-        yze.yzeRoll(hostile, blind, reRoll, game.alienrpg.rollArr.tLabel, reRoll1, game.i18n.localize('ALIENRPG.Black'), reRoll2, game.i18n.localize('ALIENRPG.Yellow'));
+        const reRoll1 = game.babylon5rpg.rollArr.r1Dice - game.babylon5rpg.rollArr.r1Six;
+        const reRoll2 = game.babylon5rpg.rollArr.r2Dice + 1 - (game.babylon5rpg.rollArr.r2One + game.babylon5rpg.rollArr.r2Six);
+        yze.yzeRoll(hostile, blind, reRoll, game.babylon5rpg.rollArr.tLabel, reRoll1, game.i18n.localize('BABYLON5RPG.Black'), reRoll2, game.i18n.localize('BABYLON5RPG.Yellow'));
       }
     });
   });
@@ -325,7 +325,7 @@ Hooks.on('renderChatMessage', (message, html, data) => {
 // Setupthe prototype token
 // *************************************************
 Hooks.on('preCreateActor', (actor, dir) => {
-  if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
+  if (game.settings.get('babylon5rpg', 'defaultTokenSettings')) {
     // Set wounds, advantage, and display name visibility
     mergeObject(actor, {
       'token.displayName': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
@@ -449,13 +449,13 @@ Hooks.on('preCreateToken', async (scene, tokenData) => {
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function createAlienrpgMacro(data, slot) {
+async function createBABYLON5RPGMacro(data, slot) {
   if (data.type !== 'Item') return;
-  if (!('data' in data)) return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoActor'));
+  if (!('data' in data)) return ui.notifications.warn(game.i18n.localize('BABYLON5RPG.NoActor'));
   const item = data.data;
 
   // Create the macro command
-  const command = `game.alienrpg.rollItemMacro("${item.name}");`;
+  const command = `game.babylon5rpg.rollItemMacro("${item.name}");`;
   let macro = game.macros.entities.find((m) => m.name === item.name && m.command === command);
   if (!macro) {
     macro = await Macro.create({
@@ -463,7 +463,7 @@ async function createAlienrpgMacro(data, slot) {
       type: 'script',
       img: item.img,
       command: command,
-      flags: { 'alienrpg.itemMacro': true },
+      flags: { 'babylon5rpg.itemMacro': true },
     });
   }
   game.user.assignHotbarMacro(macro, slot);
@@ -482,9 +482,9 @@ function rollItemMacro(itemName) {
   let actor;
   if (speaker.token) actor = game.actors.tokens[speaker.token];
   if (!actor) actor = game.actors.get(speaker.actor);
-  // console.warn('alienrpg.js 155 - Got here', speaker, actor);
+  // console.warn('babylon5rpg.js 155 - Got here', speaker, actor);
   const item = actor ? actor.items.find((i) => i.name === itemName) : null;
-  if (!item) return ui.notifications.warn(game.i18n.localize('ALIENRPG.NoItem') + ' ' + ` ${itemName}`);
+  if (!item) return ui.notifications.warn(game.i18n.localize('BABYLON5RPG.NoItem') + ' ' + ` ${itemName}`);
 
   // Trigger the item roll
   return item.roll();
@@ -494,7 +494,7 @@ Hooks.once('setup', function () {
   const toLocalize = ['skills', 'attributes'];
 
   for (let o of toLocalize) {
-    CONFIG.ALIENRPG[o] = Object.entries(CONFIG.ALIENRPG[o]).reduce((obj, e) => {
+    CONFIG.BABYLON5RPG[o] = Object.entries(CONFIG.BABYLON5RPG[o]).reduce((obj, e) => {
       obj[e[0]] = game.i18n.localize(e[1]);
 
       return obj;
