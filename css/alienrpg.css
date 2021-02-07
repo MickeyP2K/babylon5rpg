@@ -324,9 +324,10 @@ a.inline-roll {
 }
 
 .creature-attack-roll:hover {
-  border-radius: 10px;
+  /*border-radius: 10px;
   background-color: #942a22;
-  color: red;
+  color: red;*/
+  cursor: pointer;
 }
 
 .creature-attack-roll:active {
@@ -399,9 +400,10 @@ button:focus {
 }
 
 .alien-Push-button:hover {
-  border-radius: 10px;
+  /*border-radius: 10px;
   background-color: #942a22;
-  color: red;
+  color: red;*/
+  cursor: pointer;
 }
 
 .tooltip {
@@ -1473,8 +1475,8 @@ button:focus {
 
 /* @group Blink */
 .blink {
-  -webkit-animation: blink 2s linear infinite;
-  animation: blink 2s linear infinite;
+  -webkit-animation: blink 1s linear 10;
+  animation: blink 1s linear 10;
 }
 
 @-webkit-keyframes blink {
