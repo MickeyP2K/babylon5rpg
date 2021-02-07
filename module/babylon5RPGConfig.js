@@ -46,7 +46,7 @@ export class Babylon5Config extends FormApplication {
   onReset() {
     // this.reset = true;
     game.settings.set('babylon5rpg', 'fontStyle', 'Wallpoet');
-    game.settings.set('babylon5rpg', 'fontColour', '#6e6e6e');
+    game.settings.set('babylon5rpg', 'fontColour', '#ccc');
     this.render();
   }
 

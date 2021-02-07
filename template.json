@@ -142,6 +142,10 @@
           "value": "",
           "label": "sigItem"
         },
+        "credits": {
+          "value": "",
+          "label": "credits"
+        },
         "agenda": {
           "value": "",
           "label": "agenda"
