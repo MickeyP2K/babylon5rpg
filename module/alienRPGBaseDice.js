@@ -49,7 +49,7 @@ export class AlienRPGStressDie extends Die {
   /** @override */
   static getResultLabel(result) {
     return {
-      1: '<img src="systems/babylon5rpg/ui/DsN/alien-dice-y1.png" />',
+      1: '<img src="systems/babylon5rpg/ui/DsN/babylon5-dice-y1.png" />',
       2: '<img src="systems/babylon5rpg/ui/DsN/alien-dice-y0.png" />',
       3: '<img src="systems/babylon5rpg/ui/DsN/alien-dice-y0.png" />',
       4: '<img src="systems/babylon5rpg/ui/DsN/alien-dice-y0.png" />',
