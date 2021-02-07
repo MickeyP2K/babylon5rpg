@@ -2,7 +2,7 @@
   "name": "babylon5rpg",
   "title": "Babylon 5 RPG",
   "description": "A Babylon 5 game system using the Free League Publishing game mechanics for Foundry VTT,",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minimumCoreVersion": "0.5.7",
   "compatibleCoreVersion": "0.7.9",
   "author": "Michael Power",
@@ -31,7 +31,7 @@
     },
     {
       "name": "babylon5",
-      "label": "Alien",
+      "label": "Babylon5",
       "path": "packs/Babylon5RPG-babylon5.db",
       "entity": "Macro",
       "module": "Babylon5RPG"

@@ -16,7 +16,7 @@ import * as migrations from './migration.js';
 import { Babylon5Config } from './BABYLON5RPGConfig.js';
 
 Hooks.once('init', async function () {
-  console.warn(`Initializing Alien RPG`);
+  console.warn(`Initializing Babylon5 RPG`);
   game.babylon5rpg = {
     babylon5rpgActor,
     babylon5rpgItem,
@@ -122,7 +122,7 @@ Hooks.once('init', async function () {
     type: String,
     config: false,
     scope: 'client',
-    default: '#adff2f',
+    default: '#ccc',
     onChange: () => {
       location.reload();
     },
@@ -224,7 +224,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     texture: 'none',
   });
 
-  dice3d.addSystem({ id: 'babylon5rpg', name: 'Alien RPG - Blank' }, 'exclusive');
+  dice3d.addSystem({ id: 'babylon5rpg', name: 'Babylon5 RPG - Blank' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [
@@ -252,7 +252,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     system: 'babylon5rpg',
   });
 
-  dice3d.addSystem({ id: 'babylon5rpgf', name: 'Alien RPG - Full Dice' }, 'exclusive');
+  dice3d.addSystem({ id: 'babylon5rpgf', name: 'Babylon5 RPG - Full Dice' }, 'exclusive');
   dice3d.addDicePreset({
     type: 'db',
     labels: [

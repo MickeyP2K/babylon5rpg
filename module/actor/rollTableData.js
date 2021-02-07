@@ -4,7 +4,7 @@ export class babylon5rpgrTableGet extends Actor {
   }
 
   static rTableget() {
-    let folder = game.folders.entities.find((x) => x.name === 'Alien Creature Tables');
+    let folder = game.folders.entities.find((x) => x.name === 'Babylon5 Creature Tables');
     // console.log('rTableget -> folder', folder);
     let aTables = folder.content;
     let lTables = { 0: 'None' };

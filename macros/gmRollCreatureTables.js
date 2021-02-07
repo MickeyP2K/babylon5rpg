@@ -1,7 +1,7 @@
 (async () => {
   let options = '';
   game.tables.entities.forEach((t) => {
-    if (t.folder.name === 'Alien Creature Tables') {
+    if (t.folder.name === 'Babylon5 Creature Tables') {
       options = options.concat(`<option value="${t.data._id}">${t.data.name}</option>`);
     }
   });

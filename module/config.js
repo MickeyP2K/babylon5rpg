@@ -1,4 +1,4 @@
-// Namespace Alien Configuration Values
+// Namespace Babylon5 Configuration Values
 export const BABYLON5RPG = {};
 
 /**
