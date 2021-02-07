@@ -7,9 +7,9 @@ export class Babylon5Config extends FormApplication {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('BABYLON5RPG.MenuLabel'),
-      id: 'babylon5prgSettings',
+      id: 'babylon5rpgSettings',
       icon: 'fas fa-cogs',
-      template: 'systems/babylon5rpg/module/babylon5prgSettings.html',
+      template: 'systems/babylon5rpg/module/babylon5rpgSettings.html',
       width: 400,
       closeOnSubmit: true,
     });
