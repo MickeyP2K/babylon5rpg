@@ -1699,11 +1699,11 @@ button:focus {
 }
 
 .babylon5rpg .cashboxsize {
-  max-width: 150px;
+  max-width: 100px;
   color: inherit;
-  justify-items: center;
+  justify-items: right;
   background-color: #000;
-  text-align: center;
+  text-align: right;
 }
 
 .babylon5rpg .textbox {
