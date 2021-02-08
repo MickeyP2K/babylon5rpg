@@ -263,27 +263,28 @@
           <textarea name="data.general.appearance.value" rows="2"data-dtype="String">{{data.general.appearance.value}}</textarea>
         </div>-->
         
-        <div class="Item5">
+        <div class="Item4">
           <label class="resource-label">Credits</label>
-          <textarea name="data.general.credits.value" rows="1"data-dtype="String">{{data.general.credits.value}}</textarea>
+          <input type="text" class="maxboxsize gCol9" name="data.general.credits.value" value="{{data.general.credits.value}}" data-dtype="Number" />
+          <!--<textarea name="data.general.credits.value" rows="1"data-dtype="String">{{data.general.credits.value}}</textarea>-->
 
         </div>
         
-        <div class="Item3">
+        <div class="Item5">
           <label class="resource-label">Influence</label> 
-          <textarea name="data.general.agenda.value" rows="1"data-dtype="String">{{data.general.agenda.value}}</textarea>
+          <textarea name="data.general.agenda.value" rows="2"data-dtype="String">{{data.general.agenda.value}}</textarea>
         </div>
         
         <div class="Item6">
           <label class="resource-label">{{ localize "BABYLON5RPG.Relationships"}}</label> 
           <br>
-          <label class="resource-label" style="font-size: smaller;">{{ localize "BABYLON5RPG.relOne"}}</label>
+          <label class="resource-label" style="font-size: smaller;">Allies</label>
           <textarea name="data.general.relOne.value" rows="1"data-dtype="String">{{data.general.relOne.value}}</textarea>
 
         </div>
         
         <div class="Item7">
-          <label class="resource-label" style="font-size: smaller;">{{ localize "BABYLON5RPG.relTwo"}}</label>
+          <label class="resource-label" style="font-size: smaller;">Enemies</label>
           <textarea name="data.general.relTwo.value" rows="1"data-dtype="String">{{data.general.relTwo.value}}</textarea>
 
         </div>
