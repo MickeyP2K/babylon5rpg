@@ -87,7 +87,7 @@
           
           {{#each talents as |item iid|}}
           <li class="item grid-talents" data-item-id="{{item._id}}">
-            <img class="profile-img-item-icon" src="{{item.img}}" title="{{item.name}}" /><h4 class="item-name tal3 talent-btn" data-pmbut="{{item._id}}">{{item.name}} </h4>
+            <div class="tal3"><img class="profile-img-item-icon" src="{{item.img}}" title="{{item.name}}" /><h4 class="item-name talent-btn" data-pmbut="{{item._id}}">{{item.name}} </h4></div>
             <div class="tal4 item-controls">
             <a class="item-control item-edit" data-item-id="{{item._id}}" title="{{localize 'BABYLON5RPG.EditItem'}}"><i class="fas fa-edit"></i></a>
 
