@@ -1861,6 +1861,7 @@ button:focus {
 
 .babylon5rpg .item-name {
   margin: 0;
+  align-self: center;
 }
 
 .babylon5rpg .item-controls {
