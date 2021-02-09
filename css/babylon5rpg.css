@@ -97,10 +97,11 @@
   border: var(--babylon5borders) 3px;
 }
 
-.babylon5rpg panel {
+.panel {
   font-family: var(--babylon5themefont);
-  padding: 10px;
-  border: var(--babylon5borders) 3px;
+  padding: 20px;
+  border: 1px solid var(--babylon5borders);
+  border-radius: 1px;
 }
 
 .journal-sheet form {
