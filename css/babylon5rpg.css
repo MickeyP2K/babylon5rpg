@@ -97,6 +97,12 @@
   border: var(--babylon5borders) 3px;
 }
 
+.babylon5rpg panel {
+  font-family: var(--babylon5themefont);
+  padding: 10px;
+  border: var(--babylon5borders) 3px;
+}
+
 .journal-sheet form {
   color: var(--babylon5borders);
   background: var(--babylon5blue);
