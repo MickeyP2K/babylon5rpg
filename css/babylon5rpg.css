@@ -106,7 +106,7 @@
 
 .journal-sheet form {
   color: var(--babylon5borders);
-  background: var(--babylon5blue);
+  /*background: var(--babylon5blue);*/
   border: 1px solid var(--babylon5borders);
   border-radius: 1px;
 }
