@@ -1907,10 +1907,14 @@ button:focus {
   display: block;
 }
 
-.babylon5rpgbasedie {
+.dice-tooltip .dice-rolls .roll {
   filter: none;
 }
 
-.babylon5rpgstressdie {
+.dice-tooltip .dice-rolls .roll.max {
+  filter: none;
+}
+
+.dice-tooltip .dice-rolls .roll.min {
   filter: none;
 }
