@@ -1906,3 +1906,11 @@ button:focus {
 .babylon5rpg .biog img {
   display: block;
 }
+
+.babylon5rpgbasedie {
+  filter: none;
+}
+
+.babylon5rpgstressdie {
+  filter: none;
+}
